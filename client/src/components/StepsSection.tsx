@@ -7,30 +7,30 @@ interface StepsSectionProps {
 
 const content = {
   en: {
-    title: "3 Easy Steps to Join",
+    title: "3 Easy Steps",
     steps: [
       {
         number: 1,
         title: "Fill Out Form",
-        description: "Fill out our quick form with your child's info. It only takes a few minutes!",
+        description: "Fill out our quick form with your child's info. Takes just a few minutes!",
         icon: FileText,
       },
       {
         number: 2,
         title: "Do Online Forms",
-        description: "Watch a short video. Then fill out forms on your computer or phone whenever you want.",
+        description: "Watch a short video. Then fill out forms on your computer or phone when you want.",
         icon: ClipboardCheck,
       },
       {
         number: 3,
         title: "Book First Visit",
-        description: "Pick a time for your child to meet our team. We'll help you find a day that works!",
+        description: "Pick a time for your child to meet our team. We will help you find a good day!",
         icon: Calendar,
       },
     ],
   },
   es: {
-    title: "3 Pasos Fáciles Para Unirse",
+    title: "3 Pasos Fáciles",
     steps: [
       {
         number: 1,
@@ -41,13 +41,13 @@ const content = {
       {
         number: 2,
         title: "Hacer Formularios",
-        description: "Mire un video corto. Luego llene los formularios en su computadora o teléfono cuando quiera.",
+        description: "Vea un video corto. Luego llene los formularios en su computadora o teléfono cuando quiera.",
         icon: ClipboardCheck,
       },
       {
         number: 3,
         title: "Reservar Primera Visita",
-        description: "Elija un momento para que su hijo conozca a nuestro equipo. ¡Le ayudaremos a encontrar un día!",
+        description: "Escoja un tiempo para que su hijo vea a nuestro equipo. ¡Le ayudaremos a encontrar un buen día!",
         icon: Calendar,
       },
     ],
@@ -68,7 +68,7 @@ export default function StepsSection({ language }: StepsSectionProps) {
           {t.steps.map((step) => (
             <Card
               key={step.number}
-              className="p-8 text-center hover-elevate hover:scale-105 transition-all"
+              className="p-8 text-center hover-elevate"
               data-testid={`card-step-${step.number}`}
             >
               <div className="flex flex-col items-center">

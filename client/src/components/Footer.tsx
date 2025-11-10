@@ -44,7 +44,7 @@ export default function Footer({ language }: FooterProps) {
             <div className="space-y-3">
               <a 
                 href={`tel:${t.phone}`} 
-                className="flex items-center gap-3 text-muted-foreground hover:text-foreground transition-colors text-lg hover:scale-105 active:scale-95 transition-transform"
+                className="flex items-center gap-3 text-muted-foreground hover:text-foreground hover-elevate transition-colors text-lg"
                 data-testid="link-phone"
               >
                 <Phone className="w-6 h-6" />
@@ -52,7 +52,7 @@ export default function Footer({ language }: FooterProps) {
               </a>
               <a 
                 href={`mailto:${t.email}`}
-                className="flex items-center gap-3 text-muted-foreground hover:text-foreground transition-colors text-lg hover:scale-105 active:scale-95 transition-transform"
+                className="flex items-center gap-3 text-muted-foreground hover:text-foreground hover-elevate transition-colors text-lg"
                 data-testid="link-email"
               >
                 <Mail className="w-6 h-6" />

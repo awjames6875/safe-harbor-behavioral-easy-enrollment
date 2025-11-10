@@ -10,7 +10,7 @@ import LanguageToggle from "@/components/LanguageToggle";
 const content = {
   en: {
     title: "Check In Here",
-    subtitle: "Scan the QR code or type the ID number",
+    subtitle: "Scan the code or type the ID number",
     qrLabel: "Scan QR Code",
     orDivider: "OR",
     manualLabel: "Type ID Number",
@@ -19,20 +19,20 @@ const content = {
     successTitle: "Done!",
     successMessage: "Check-in saved!",
     anotherCheckIn: "Check In Another Child",
-    backToHome: "Go Back Home",
+    backToHome: "Go Home",
   },
   es: {
-    title: "Registrar Aquí",
-    subtitle: "Escanee el código QR o escriba el número de ID",
-    qrLabel: "Escanear Código QR",
+    title: "Marcar Aquí",
+    subtitle: "Vea el código o escriba el número de ID",
+    qrLabel: "Ver Código QR",
     orDivider: "O",
     manualLabel: "Escribir Número de ID",
     contactIdPlaceholder: "Número de ID (como 12345)",
     submitButton: "Marcar Aquí",
     successTitle: "¡Listo!",
-    successMessage: "¡Registro guardado!",
-    anotherCheckIn: "Registrar Otro Niño",
-    backToHome: "Volver a Inicio",
+    successMessage: "¡Guardado!",
+    anotherCheckIn: "Marcar Otro Niño",
+    backToHome: "Ir a Inicio",
   },
 };
 
@@ -94,7 +94,7 @@ export default function CheckIn() {
                     placeholder={t.contactIdPlaceholder}
                     value={contactId}
                     onChange={(e) => setContactId(e.target.value)}
-                    className="mt-2 text-lg h-14"
+                    className="mt-2 text-lg"
                     required
                     data-testid="input-contact-id"
                   />
@@ -102,7 +102,7 @@ export default function CheckIn() {
 
                 <Button
                   type="submit"
-                  className="w-full text-xl py-7 hover:scale-105 active:scale-95 transition-transform"
+                  className="w-full text-xl"
                   size="lg"
                   data-testid="button-mark-present"
                 >
@@ -111,7 +111,7 @@ export default function CheckIn() {
               </form>
 
               <Link href="/">
-                <Button variant="ghost" className="w-full text-lg hover:scale-105 active:scale-95 transition-transform" data-testid="link-home">
+                <Button variant="ghost" className="w-full text-lg" data-testid="link-home">
                   {t.backToHome}
                 </Button>
               </Link>
@@ -119,21 +119,21 @@ export default function CheckIn() {
           </>
         ) : (
           <div className="text-center py-8">
-            <CheckCircle className="w-24 h-24 text-green-500 mx-auto mb-6 animate-bounce" />
+            <CheckCircle className="w-24 h-24 text-green-500 mx-auto mb-6" />
             <h2 className="text-3xl font-bold mb-3">{t.successTitle}</h2>
             <p className="text-xl text-muted-foreground mb-8">{t.successMessage}</p>
             
             <div className="space-y-3">
               <Button
                 onClick={handleReset}
-                className="w-full text-xl py-7 hover:scale-105 active:scale-95 transition-transform"
+                className="w-full text-xl"
                 size="lg"
                 data-testid="button-another-checkin"
               >
                 {t.anotherCheckIn}
               </Button>
               <Link href="/">
-                <Button variant="outline" className="w-full text-lg hover:scale-105 active:scale-95 transition-transform" data-testid="link-home-success">
+                <Button variant="outline" className="w-full text-lg" data-testid="link-home-success">
                   {t.backToHome}
                 </Button>
               </Link>

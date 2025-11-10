@@ -8,7 +8,7 @@ interface FormEmbedSectionProps {
 const content = {
   en: {
     title: "Sign Up Here",
-    subtitle: "Fill out this quick form to get started today!",
+    subtitle: "Fill out this quick form to get started!",
     placeholder: "Form Goes Here",
     instructions: [
       "For Staff:",
@@ -19,12 +19,12 @@ const content = {
     ],
   },
   es: {
-    title: "Inscríbase Aquí",
-    subtitle: "¡Llene este formulario rápido para comenzar hoy!",
+    title: "Regístrese Aquí",
+    subtitle: "¡Llene este formulario rápido para empezar!",
     placeholder: "El Formulario Va Aquí",
     instructions: [
       "Para Personal:",
-      "1. Inicie sesión en GoHighLevel",
+      "1. Entre a GoHighLevel",
       "2. Vaya a Formularios y copie el código",
       "3. Pegue el código aquí",
       "El formulario aparecerá para los padres",
@@ -45,7 +45,7 @@ export default function FormEmbedSection({ language }: FormEmbedSectionProps) {
           {t.subtitle}
         </p>
         
-        <Card className="p-12 border-2 border-dashed border-primary/30 bg-primary/5 hover-elevate transition-all">
+        <Card className="p-12 border-2 border-dashed border-primary/30 bg-primary/5 hover-elevate">
           <div className="text-center">
             <AlertCircle className="w-16 h-16 text-primary mx-auto mb-6" />
             <h3 className="text-2xl font-semibold mb-4">{t.placeholder}</h3>

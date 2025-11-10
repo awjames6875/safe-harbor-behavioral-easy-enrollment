@@ -13,7 +13,7 @@ const content = {
     title: "What Parents Say",
     testimonials: [
       {
-        quote: "This program is amazing! My daughter loves it. The staff is so kind and helpful. Signing up was super easy!",
+        quote: "This program is great! My daughter loves it here. The staff is very nice and helpful. Signing up was easy!",
         name: "Maria Rodriguez",
         childAge: 4,
         daycare: "Butterfly Academy",
@@ -21,7 +21,7 @@ const content = {
         initials: "MR",
       },
       {
-        quote: "Safe Harbor made everything simple. They helped us every step of the way. I tell all my friends about it!",
+        quote: "Safe Harbor made it simple. They helped us at every step. I tell all my friends about this place!",
         name: "David Martinez",
         childAge: 5,
         daycare: "Sunshine Daycare",
@@ -34,7 +34,7 @@ const content = {
     title: "Lo Que Dicen Los Padres",
     testimonials: [
       {
-        quote: "¡Este programa es increíble! A mi hija le encanta. El personal es muy amable y servicial. ¡Inscribirse fue súper fácil!",
+        quote: "¡Este programa es muy bueno! A mi hija le gusta mucho. El personal es muy amable. ¡Inscribirse fue fácil!",
         name: "Maria Rodriguez",
         childAge: 4,
         daycare: "Butterfly Academy",
@@ -42,7 +42,7 @@ const content = {
         initials: "MR",
       },
       {
-        quote: "Safe Harbor hizo todo simple. Nos ayudaron en cada paso. ¡Se lo cuento a todos mis amigos!",
+        quote: "Safe Harbor lo hizo simple. Nos ayudaron en cada paso. ¡Les cuento a todos mis amigos de este lugar!",
         name: "David Martinez",
         childAge: 5,
         daycare: "Sunshine Daycare",
@@ -67,7 +67,7 @@ export default function TestimonialsSection({ language }: TestimonialsSectionPro
           {t.testimonials.map((testimonial, index) => (
             <Card
               key={index}
-              className="p-8 hover-elevate hover:scale-105 transition-transform"
+              className="p-8 hover-elevate"
               data-testid={`card-testimonial-${index}`}
             >
               <Quote className="w-10 h-10 text-primary mb-4" />

@@ -9,15 +9,15 @@ interface HeroSectionProps {
 
 const content = {
   en: {
-    headline: "Welcome to Safe Harbor's Body & Brain™ Program",
-    subheadline: "We help your child grow and learn. Join us today!",
-    cta: "Get Started Now",
+    headline: "Welcome to Safe Harbor Day Care",
+    subheadline: "We help your child grow and learn every day!",
+    cta: "Start Now",
     watchVideo: "Watch Video",
   },
   es: {
-    headline: "Bienvenido al Programa Body & Brain™ de Safe Harbor",
-    subheadline: "Ayudamos a su hijo a crecer y aprender. ¡Únase hoy!",
-    cta: "Comenzar Ahora",
+    headline: "Bienvenido a la Guardería Safe Harbor",
+    subheadline: "¡Ayudamos a su hijo a crecer y aprender cada día!",
+    cta: "Empezar Ahora",
     watchVideo: "Ver Video",
   },
 };
@@ -46,7 +46,7 @@ export default function HeroSection({ language, onGetStarted }: HeroSectionProps
           <Button
             size="lg"
             onClick={onGetStarted}
-            className="px-10 py-8 text-xl font-semibold animate-pulse-glow hover:scale-105 active:scale-95 transition-transform"
+            className="text-xl font-semibold animate-pulse-glow"
             data-testid="button-get-started"
           >
             {t.cta}
@@ -54,7 +54,7 @@ export default function HeroSection({ language, onGetStarted }: HeroSectionProps
           <Button
             size="lg"
             variant="outline"
-            className="px-10 py-8 text-xl font-semibold bg-white/10 backdrop-blur-sm border-white/30 text-white hover:bg-white/20 hover:scale-105 active:scale-95 transition-all"
+            className="text-xl font-semibold bg-white/10 backdrop-blur-sm border-white/30 text-white"
             data-testid="button-watch-video"
           >
             <Play className="w-6 h-6 mr-2" />
