@@ -1,5 +1,5 @@
 import { useState } from "react";
-import LanguageToggle from "@/components/LanguageToggle";
+import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
 import StepsSection from "@/components/StepsSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
@@ -16,9 +16,7 @@ export default function Home() {
 
   return (
     <div className="min-h-screen">
-      <div className="fixed top-6 right-6 z-50">
-        <LanguageToggle language={language} onLanguageChange={setLanguage} />
-      </div>
+      <Header language={language} onLanguageChange={setLanguage} />
       
       <HeroSection language={language} onGetStarted={scrollToForm} />
       <StepsSection language={language} />

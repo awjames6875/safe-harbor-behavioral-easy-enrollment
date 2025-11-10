@@ -6,9 +6,20 @@ The Safe Harbor Easy Enrollment System is a bilingual (English/Spanish) web appl
 
 The application serves as a modern enrollment portal that integrates with GoHighLevel (GHL) for CRM, form handling, and automated communications. It features a landing page with enrollment forms and a separate check-in system for attendance tracking at daycare sites.
 
+## Recent Changes
+
+**November 10, 2025:**
+- Added Safe Harbor lighthouse logo to fixed header on all pages
+- Updated all imagery to show diverse brown-skinned children and brown caregivers in daycare settings
+- Simplified all content to 5th grade reading level in both English and Spanish
+- Implemented pulse-glow animation on primary "Start Now" call-to-action button
+- Increased font sizes across the site for better readability (headings: text-5xl to text-6xl, body: text-lg to text-xl)
+- Fixed routing issue for /check-in page
+- Created reusable Header component with logo (left) and language toggle (right)
+
 ## User Preferences
 
-Preferred communication style: Simple, everyday language.
+Preferred communication style: Simple, everyday language at 5th grade reading level.
 
 ## System Architecture
 
@@ -23,17 +34,20 @@ Preferred communication style: Simple, everyday language.
 - **Build Tool**: Vite
 
 **Design Principles:**
-- **Accessibility-First**: Large touch targets, high contrast, clear visual hierarchy optimized for older parents
-- **Bilingual Parity**: Equal visual weight for English and Spanish content with language toggle
+- **Accessibility-First**: Large touch targets, high contrast, clear visual hierarchy optimized for all parents. Larger font sizes (text-lg to text-6xl) and increased button sizes for easier reading and clicking.
+- **Bilingual Parity**: Equal visual weight for English and Spanish content with language toggle. All content simplified to 5th grade reading level.
 - **Progressive Disclosure**: Information revealed in digestible chunks to avoid overwhelming users
 - **Healthcare-Focused**: Combines healthcare portal clarity with modern SaaS onboarding simplicity
+- **Inclusive Imagery**: All photos feature diverse brown-skinned children and brown caregivers in authentic daycare settings
 
 **Component Structure:**
 - Modular, reusable components with language prop injection
+- Header component with Safe Harbor logo and language toggle (fixed positioning)
 - Sections include: Hero, Steps, Testimonials, Form Embed, Footer
 - Separate pages for Home enrollment and Check-in functionality
-- Typography system using Inter font family with defined scale (text-4xl to text-sm)
+- Typography system using Inter font family with larger scale (text-5xl to text-6xl for headings)
 - Spacing based on Tailwind's 4-unit system (4, 6, 8, 12, 16, 20, 24)
+- Custom pulse-glow animation for primary CTA buttons
 
 **Responsive Strategy:**
 - Mobile-first approach with breakpoint adaptations

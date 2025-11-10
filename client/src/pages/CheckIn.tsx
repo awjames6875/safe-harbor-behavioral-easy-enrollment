@@ -5,7 +5,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { CheckCircle, QrCode } from "lucide-react";
 import { Link } from "wouter";
-import LanguageToggle from "@/components/LanguageToggle";
+import Header from "@/components/Header";
 
 const content = {
   en: {
@@ -55,92 +55,92 @@ export default function CheckIn() {
   };
 
   return (
-    <div className="min-h-screen bg-muted/30 flex items-center justify-center p-6">
-      <div className="fixed top-6 right-6 z-50">
-        <LanguageToggle language={language} onLanguageChange={setLanguage} />
-      </div>
-
-      <Card className="w-full max-w-md p-8">
-        {!isSuccess ? (
-          <>
-            <div className="text-center mb-8">
-              <h1 className="text-4xl font-bold mb-3">{t.title}</h1>
-              <p className="text-lg text-muted-foreground">{t.subtitle}</p>
-            </div>
-
-            <div className="space-y-6">
-              <div className="border-2 border-dashed border-border rounded-lg p-8 text-center bg-muted/50">
-                <QrCode className="w-28 h-28 text-muted-foreground mx-auto mb-4" />
-                <p className="text-base text-muted-foreground">{t.qrLabel}</p>
+    <div className="min-h-screen bg-muted/30">
+      <Header language={language} onLanguageChange={setLanguage} />
+      
+      <div className="flex items-center justify-center p-6 pt-32">
+        <Card className="w-full max-w-md p-8">
+          {!isSuccess ? (
+            <>
+              <div className="text-center mb-8">
+                <h1 className="text-4xl font-bold mb-3">{t.title}</h1>
+                <p className="text-lg text-muted-foreground">{t.subtitle}</p>
               </div>
 
-              <div className="relative">
-                <div className="absolute inset-0 flex items-center">
-                  <span className="w-full border-t" />
+              <div className="space-y-6">
+                <div className="border-2 border-dashed border-border rounded-lg p-8 text-center bg-muted/50">
+                  <QrCode className="w-28 h-28 text-muted-foreground mx-auto mb-4" />
+                  <p className="text-base text-muted-foreground">{t.qrLabel}</p>
                 </div>
-                <div className="relative flex justify-center text-base uppercase">
-                  <span className="bg-card px-2 text-muted-foreground">
-                    {t.orDivider}
-                  </span>
+
+                <div className="relative">
+                  <div className="absolute inset-0 flex items-center">
+                    <span className="w-full border-t" />
+                  </div>
+                  <div className="relative flex justify-center text-base uppercase">
+                    <span className="bg-card px-2 text-muted-foreground">
+                      {t.orDivider}
+                    </span>
+                  </div>
                 </div>
+
+                <form onSubmit={handleSubmit} className="space-y-4">
+                  <div>
+                    <Label htmlFor="contactId" className="text-lg">{t.manualLabel}</Label>
+                    <Input
+                      id="contactId"
+                      type="text"
+                      placeholder={t.contactIdPlaceholder}
+                      value={contactId}
+                      onChange={(e) => setContactId(e.target.value)}
+                      className="mt-2 text-lg"
+                      required
+                      data-testid="input-contact-id"
+                    />
+                  </div>
+
+                  <Button
+                    type="submit"
+                    className="w-full text-xl"
+                    size="lg"
+                    data-testid="button-mark-present"
+                  >
+                    {t.submitButton}
+                  </Button>
+                </form>
+
+                <Link href="/">
+                  <Button variant="ghost" className="w-full text-lg" data-testid="link-home">
+                    {t.backToHome}
+                  </Button>
+                </Link>
               </div>
-
-              <form onSubmit={handleSubmit} className="space-y-4">
-                <div>
-                  <Label htmlFor="contactId" className="text-lg">{t.manualLabel}</Label>
-                  <Input
-                    id="contactId"
-                    type="text"
-                    placeholder={t.contactIdPlaceholder}
-                    value={contactId}
-                    onChange={(e) => setContactId(e.target.value)}
-                    className="mt-2 text-lg"
-                    required
-                    data-testid="input-contact-id"
-                  />
-                </div>
-
+            </>
+          ) : (
+            <div className="text-center py-8">
+              <CheckCircle className="w-24 h-24 text-green-500 mx-auto mb-6" />
+              <h2 className="text-3xl font-bold mb-3">{t.successTitle}</h2>
+              <p className="text-xl text-muted-foreground mb-8">{t.successMessage}</p>
+              
+              <div className="space-y-3">
                 <Button
-                  type="submit"
+                  onClick={handleReset}
                   className="w-full text-xl"
                   size="lg"
-                  data-testid="button-mark-present"
+                  data-testid="button-another-checkin"
                 >
-                  {t.submitButton}
+                  {t.anotherCheckIn}
                 </Button>
-              </form>
-
-              <Link href="/">
-                <Button variant="ghost" className="w-full text-lg" data-testid="link-home">
-                  {t.backToHome}
-                </Button>
-              </Link>
+                <Link href="/">
+                  <Button variant="outline" className="w-full text-lg" data-testid="link-home-success">
+                    {t.backToHome}
+                  </Button>
+                </Link>
+              </div>
             </div>
-          </>
-        ) : (
-          <div className="text-center py-8">
-            <CheckCircle className="w-24 h-24 text-green-500 mx-auto mb-6" />
-            <h2 className="text-3xl font-bold mb-3">{t.successTitle}</h2>
-            <p className="text-xl text-muted-foreground mb-8">{t.successMessage}</p>
-            
-            <div className="space-y-3">
-              <Button
-                onClick={handleReset}
-                className="w-full text-xl"
-                size="lg"
-                data-testid="button-another-checkin"
-              >
-                {t.anotherCheckIn}
-              </Button>
-              <Link href="/">
-                <Button variant="outline" className="w-full text-lg" data-testid="link-home-success">
-                  {t.backToHome}
-                </Button>
-              </Link>
-            </div>
-          </div>
-        )}
-      </Card>
+          )}
+        </Card>
+      </div>
     </div>
   );
 }
