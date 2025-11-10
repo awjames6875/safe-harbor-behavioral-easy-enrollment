@@ -7,47 +7,47 @@ interface StepsSectionProps {
 
 const content = {
   en: {
-    title: "Simple 3-Step Enrollment",
+    title: "3 Easy Steps to Join",
     steps: [
       {
         number: 1,
-        title: "Fill Out the Form",
-        description: "Complete our quick bilingual enrollment form with your child's basic information.",
+        title: "Fill Out Form",
+        description: "Fill out our quick form with your child's info. It only takes a few minutes!",
         icon: FileText,
       },
       {
         number: 2,
-        title: "Complete TherapyNotes Forms",
-        description: "Watch our helpful video and complete your secure forms online at your convenience.",
+        title: "Do Online Forms",
+        description: "Watch a short video. Then fill out forms on your computer or phone whenever you want.",
         icon: ClipboardCheck,
       },
       {
         number: 3,
-        title: "Book Your Assessment",
-        description: "Schedule your child's first assessment with our expert therapists.",
+        title: "Book First Visit",
+        description: "Pick a time for your child to meet our team. We'll help you find a day that works!",
         icon: Calendar,
       },
     ],
   },
   es: {
-    title: "Inscripción Simple en 3 Pasos",
+    title: "3 Pasos Fáciles Para Unirse",
     steps: [
       {
         number: 1,
-        title: "Complete el Formulario",
-        description: "Complete nuestro rápido formulario de inscripción bilingüe con la información básica de su hijo.",
+        title: "Llenar Formulario",
+        description: "Llene nuestro formulario rápido con la información de su hijo. ¡Solo toma unos minutos!",
         icon: FileText,
       },
       {
         number: 2,
-        title: "Complete los Formularios de TherapyNotes",
-        description: "Mire nuestro video útil y complete sus formularios seguros en línea cuando le convenga.",
+        title: "Hacer Formularios",
+        description: "Mire un video corto. Luego llene los formularios en su computadora o teléfono cuando quiera.",
         icon: ClipboardCheck,
       },
       {
         number: 3,
-        title: "Reserve Su Evaluación",
-        description: "Programe la primera evaluación de su hijo con nuestros terapeutas expertos.",
+        title: "Reservar Primera Visita",
+        description: "Elija un momento para que su hijo conozca a nuestro equipo. ¡Le ayudaremos a encontrar un día!",
         icon: Calendar,
       },
     ],
@@ -60,7 +60,7 @@ export default function StepsSection({ language }: StepsSectionProps) {
   return (
     <section className="py-16 md:py-24 px-6">
       <div className="max-w-6xl mx-auto">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-16">
+        <h2 className="text-4xl md:text-5xl font-bold text-center mb-16">
           {t.title}
         </h2>
         
@@ -68,21 +68,21 @@ export default function StepsSection({ language }: StepsSectionProps) {
           {t.steps.map((step) => (
             <Card
               key={step.number}
-              className="p-8 text-center hover-elevate transition-all"
+              className="p-8 text-center hover-elevate hover:scale-105 transition-all"
               data-testid={`card-step-${step.number}`}
             >
               <div className="flex flex-col items-center">
-                <div className="w-16 h-16 rounded-full bg-primary text-primary-foreground flex items-center justify-center text-2xl font-bold mb-6">
+                <div className="w-20 h-20 rounded-full bg-primary text-primary-foreground flex items-center justify-center text-3xl font-bold mb-6">
                   {step.number}
                 </div>
                 
-                <step.icon className="w-12 h-12 text-primary mb-4" />
+                <step.icon className="w-14 h-14 text-primary mb-4" />
                 
-                <h3 className="text-xl md:text-2xl font-semibold mb-4">
+                <h3 className="text-2xl md:text-3xl font-semibold mb-4">
                   {step.title}
                 </h3>
                 
-                <p className="text-muted-foreground leading-relaxed">
+                <p className="text-lg text-muted-foreground leading-relaxed">
                   {step.description}
                 </p>
               </div>

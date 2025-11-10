@@ -9,30 +9,30 @@ import LanguageToggle from "@/components/LanguageToggle";
 
 const content = {
   en: {
-    title: "Staff Check-In",
-    subtitle: "Scan QR code or enter Contact ID to mark attendance",
+    title: "Check In Here",
+    subtitle: "Scan the QR code or type the ID number",
     qrLabel: "Scan QR Code",
     orDivider: "OR",
-    manualLabel: "Enter Contact ID Manually",
-    contactIdPlaceholder: "Contact ID (e.g., 12345)",
-    submitButton: "Mark Present",
-    successTitle: "Check-In Successful!",
-    successMessage: "Attendance has been recorded.",
+    manualLabel: "Type ID Number",
+    contactIdPlaceholder: "ID Number (like 12345)",
+    submitButton: "Mark Here",
+    successTitle: "Done!",
+    successMessage: "Check-in saved!",
     anotherCheckIn: "Check In Another Child",
-    backToHome: "Back to Home",
+    backToHome: "Go Back Home",
   },
   es: {
-    title: "Registro de Personal",
-    subtitle: "Escanee el código QR o ingrese el ID de contacto para marcar asistencia",
+    title: "Registrar Aquí",
+    subtitle: "Escanee el código QR o escriba el número de ID",
     qrLabel: "Escanear Código QR",
     orDivider: "O",
-    manualLabel: "Ingresar ID de Contacto Manualmente",
-    contactIdPlaceholder: "ID de Contacto (ej., 12345)",
-    submitButton: "Marcar Presente",
-    successTitle: "¡Registro Exitoso!",
-    successMessage: "La asistencia ha sido registrada.",
+    manualLabel: "Escribir Número de ID",
+    contactIdPlaceholder: "Número de ID (como 12345)",
+    submitButton: "Marcar Aquí",
+    successTitle: "¡Listo!",
+    successMessage: "¡Registro guardado!",
     anotherCheckIn: "Registrar Otro Niño",
-    backToHome: "Volver al Inicio",
+    backToHome: "Volver a Inicio",
   },
 };
 
@@ -64,21 +64,21 @@ export default function CheckIn() {
         {!isSuccess ? (
           <>
             <div className="text-center mb-8">
-              <h1 className="text-3xl font-bold mb-2">{t.title}</h1>
-              <p className="text-muted-foreground">{t.subtitle}</p>
+              <h1 className="text-4xl font-bold mb-3">{t.title}</h1>
+              <p className="text-lg text-muted-foreground">{t.subtitle}</p>
             </div>
 
             <div className="space-y-6">
               <div className="border-2 border-dashed border-border rounded-lg p-8 text-center bg-muted/50">
-                <QrCode className="w-24 h-24 text-muted-foreground mx-auto mb-4" />
-                <p className="text-sm text-muted-foreground">{t.qrLabel}</p>
+                <QrCode className="w-28 h-28 text-muted-foreground mx-auto mb-4" />
+                <p className="text-base text-muted-foreground">{t.qrLabel}</p>
               </div>
 
               <div className="relative">
                 <div className="absolute inset-0 flex items-center">
                   <span className="w-full border-t" />
                 </div>
-                <div className="relative flex justify-center text-xs uppercase">
+                <div className="relative flex justify-center text-base uppercase">
                   <span className="bg-card px-2 text-muted-foreground">
                     {t.orDivider}
                   </span>
@@ -87,14 +87,14 @@ export default function CheckIn() {
 
               <form onSubmit={handleSubmit} className="space-y-4">
                 <div>
-                  <Label htmlFor="contactId">{t.manualLabel}</Label>
+                  <Label htmlFor="contactId" className="text-lg">{t.manualLabel}</Label>
                   <Input
                     id="contactId"
                     type="text"
                     placeholder={t.contactIdPlaceholder}
                     value={contactId}
                     onChange={(e) => setContactId(e.target.value)}
-                    className="mt-2"
+                    className="mt-2 text-lg h-14"
                     required
                     data-testid="input-contact-id"
                   />
@@ -102,7 +102,7 @@ export default function CheckIn() {
 
                 <Button
                   type="submit"
-                  className="w-full"
+                  className="w-full text-xl py-7 hover:scale-105 active:scale-95 transition-transform"
                   size="lg"
                   data-testid="button-mark-present"
                 >
@@ -111,7 +111,7 @@ export default function CheckIn() {
               </form>
 
               <Link href="/">
-                <Button variant="ghost" className="w-full" data-testid="link-home">
+                <Button variant="ghost" className="w-full text-lg hover:scale-105 active:scale-95 transition-transform" data-testid="link-home">
                   {t.backToHome}
                 </Button>
               </Link>
@@ -119,21 +119,21 @@ export default function CheckIn() {
           </>
         ) : (
           <div className="text-center py-8">
-            <CheckCircle className="w-20 h-20 text-green-500 mx-auto mb-6" />
-            <h2 className="text-2xl font-bold mb-2">{t.successTitle}</h2>
-            <p className="text-muted-foreground mb-8">{t.successMessage}</p>
+            <CheckCircle className="w-24 h-24 text-green-500 mx-auto mb-6 animate-bounce" />
+            <h2 className="text-3xl font-bold mb-3">{t.successTitle}</h2>
+            <p className="text-xl text-muted-foreground mb-8">{t.successMessage}</p>
             
             <div className="space-y-3">
               <Button
                 onClick={handleReset}
-                className="w-full"
+                className="w-full text-xl py-7 hover:scale-105 active:scale-95 transition-transform"
                 size="lg"
                 data-testid="button-another-checkin"
               >
                 {t.anotherCheckIn}
               </Button>
               <Link href="/">
-                <Button variant="outline" className="w-full" data-testid="link-home-success">
+                <Button variant="outline" className="w-full text-lg hover:scale-105 active:scale-95 transition-transform" data-testid="link-home-success">
                   {t.backToHome}
                 </Button>
               </Link>

@@ -34,40 +34,40 @@ export default function Footer({ language }: FooterProps) {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-8">
           <div>
             <h3 className="text-2xl font-bold mb-4">{t.tagline}</h3>
-            <p className="text-muted-foreground">
+            <p className="text-muted-foreground text-lg">
               Body & Brain™ Program
             </p>
           </div>
           
           <div>
-            <h4 className="font-semibold text-lg mb-4">{t.contact}</h4>
+            <h4 className="font-semibold text-xl mb-4">{t.contact}</h4>
             <div className="space-y-3">
               <a 
                 href={`tel:${t.phone}`} 
-                className="flex items-center gap-3 text-muted-foreground hover:text-foreground transition-colors"
+                className="flex items-center gap-3 text-muted-foreground hover:text-foreground transition-colors text-lg hover:scale-105 active:scale-95 transition-transform"
                 data-testid="link-phone"
               >
-                <Phone className="w-5 h-5" />
+                <Phone className="w-6 h-6" />
                 <span>{t.phone}</span>
               </a>
               <a 
                 href={`mailto:${t.email}`}
-                className="flex items-center gap-3 text-muted-foreground hover:text-foreground transition-colors"
+                className="flex items-center gap-3 text-muted-foreground hover:text-foreground transition-colors text-lg hover:scale-105 active:scale-95 transition-transform"
                 data-testid="link-email"
               >
-                <Mail className="w-5 h-5" />
+                <Mail className="w-6 h-6" />
                 <span>{t.email}</span>
               </a>
-              <div className="flex items-center gap-3 text-muted-foreground">
-                <MapPin className="w-5 h-5" />
+              <div className="flex items-center gap-3 text-muted-foreground text-lg">
+                <MapPin className="w-6 h-6" />
                 <span>{t.address}</span>
               </div>
-              <p className="text-sm text-muted-foreground ml-8">{t.hours}</p>
+              <p className="text-base text-muted-foreground ml-9">{t.hours}</p>
             </div>
           </div>
         </div>
         
-        <div className="pt-8 border-t border-border text-center text-sm text-muted-foreground">
+        <div className="pt-8 border-t border-border text-center text-base text-muted-foreground">
           {t.copyright}
         </div>
       </div>

@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Play } from "lucide-react";
-import heroImage from "@assets/generated_images/Daycare_hero_background_image_3cfbf092.png";
+import heroImage from "@assets/generated_images/Daycare_hero_with_brown_children_21832bcc.png";
 
 interface HeroSectionProps {
   language: "en" | "es";
@@ -10,15 +10,15 @@ interface HeroSectionProps {
 const content = {
   en: {
     headline: "Welcome to Safe Harbor's Body & Brain™ Program",
-    subheadline: "Expert therapeutic daycare services for your child's growth and development",
-    cta: "Get Started",
-    watchVideo: "Watch Introduction Video",
+    subheadline: "We help your child grow and learn. Join us today!",
+    cta: "Get Started Now",
+    watchVideo: "Watch Video",
   },
   es: {
     headline: "Bienvenido al Programa Body & Brain™ de Safe Harbor",
-    subheadline: "Servicios de guardería terapéutica expertos para el crecimiento y desarrollo de su hijo",
-    cta: "Comenzar",
-    watchVideo: "Ver Video de Introducción",
+    subheadline: "Ayudamos a su hijo a crecer y aprender. ¡Únase hoy!",
+    cta: "Comenzar Ahora",
+    watchVideo: "Ver Video",
   },
 };
 
@@ -35,18 +35,18 @@ export default function HeroSection({ language, onGetStarted }: HeroSectionProps
       </div>
       
       <div className="relative z-10 max-w-4xl mx-auto px-6 text-center text-white">
-        <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
+        <h1 className="text-5xl md:text-6xl font-bold mb-8 leading-tight">
           {t.headline}
         </h1>
-        <p className="text-lg md:text-xl mb-12 leading-relaxed text-white/95">
+        <p className="text-xl md:text-2xl mb-12 leading-relaxed text-white/95">
           {t.subheadline}
         </p>
         
-        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+        <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
           <Button
             size="lg"
             onClick={onGetStarted}
-            className="px-8 py-6 text-lg"
+            className="px-10 py-8 text-xl font-semibold animate-pulse-glow hover:scale-105 active:scale-95 transition-transform"
             data-testid="button-get-started"
           >
             {t.cta}
@@ -54,10 +54,10 @@ export default function HeroSection({ language, onGetStarted }: HeroSectionProps
           <Button
             size="lg"
             variant="outline"
-            className="px-8 py-6 text-lg bg-white/10 backdrop-blur-sm border-white/30 text-white hover:bg-white/20"
+            className="px-10 py-8 text-xl font-semibold bg-white/10 backdrop-blur-sm border-white/30 text-white hover:bg-white/20 hover:scale-105 active:scale-95 transition-all"
             data-testid="button-watch-video"
           >
-            <Play className="w-5 h-5 mr-2" />
+            <Play className="w-6 h-6 mr-2" />
             {t.watchVideo}
           </Button>
         </div>
