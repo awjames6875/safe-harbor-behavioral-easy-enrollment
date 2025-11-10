@@ -1,5 +1,5 @@
 import LanguageToggle from "@/components/LanguageToggle";
-import logoImage from "@assets/circlelogo_1762768333281.png";
+import logoImage from "@assets/generated_images/Safe_Harbor_circular_logo_transparent_f9f5b433.png";
 
 interface HeaderProps {
   language: "en" | "es";
