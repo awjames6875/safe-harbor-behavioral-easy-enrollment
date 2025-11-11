@@ -3,6 +3,8 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Quote } from "lucide-react";
 import mariaImage from "@assets/generated_images/Black_mother_testimonial_portrait_f82b76f9.png";
 import davidImage from "@assets/generated_images/Hispanic_father_testimonial_portrait_4ea7d473.png";
+import carmenImage from "@assets/generated_images/Carmen_Lopez_testimonial_portrait_481bd585.png";
+import jamesImage from "@assets/generated_images/James_Brown_testimonial_portrait_b3ea0655.png";
 
 interface TestimonialsSectionProps {
   language: "en" | "es";
@@ -33,7 +35,7 @@ const content = {
         name: "Carmen Lopez",
         childAge: 3,
         daycare: "Rainbow Kids Center",
-        image: mariaImage,
+        image: carmenImage,
         initials: "CL",
       },
       {
@@ -41,7 +43,7 @@ const content = {
         name: "James Brown",
         childAge: 6,
         daycare: "Little Stars Academy",
-        image: davidImage,
+        image: jamesImage,
         initials: "JB",
       },
     ],
@@ -70,7 +72,7 @@ const content = {
         name: "Carmen Lopez",
         childAge: 3,
         daycare: "Rainbow Kids Center",
-        image: mariaImage,
+        image: carmenImage,
         initials: "CL",
       },
       {
@@ -78,7 +80,7 @@ const content = {
         name: "James Brown",
         childAge: 6,
         daycare: "Little Stars Academy",
-        image: davidImage,
+        image: jamesImage,
         initials: "JB",
       },
     ],
