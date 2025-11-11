@@ -1,6 +1,8 @@
 import { Button } from "@/components/ui/button";
 import { Play } from "lucide-react";
+import { motion } from "framer-motion";
 import heroImage from "@assets/generated_images/Daycare_hero_with_brown_children_21832bcc.png";
+import { cn } from "@/lib/utils";
 
 interface HeroSectionProps {
   language: "en" | "es";
@@ -22,6 +24,69 @@ const content = {
   },
 };
 
+function ElegantShape({
+  className,
+  delay = 0,
+  width = 400,
+  height = 100,
+  rotate = 0,
+}: {
+  className?: string;
+  delay?: number;
+  width?: number;
+  height?: number;
+  rotate?: number;
+}) {
+  return (
+    <motion.div
+      initial={{
+        opacity: 0,
+        y: -150,
+        rotate: rotate - 15,
+      }}
+      animate={{
+        opacity: 1,
+        y: 0,
+        rotate: rotate,
+      }}
+      transition={{
+        duration: 2.4,
+        delay,
+        ease: [0.23, 0.86, 0.39, 0.96],
+        opacity: { duration: 1.2 },
+      }}
+      className={cn("absolute", className)}
+    >
+      <motion.div
+        animate={{
+          y: [0, 15, 0],
+        }}
+        transition={{
+          duration: 12,
+          repeat: Number.POSITIVE_INFINITY,
+          ease: "easeInOut",
+        }}
+        style={{
+          width,
+          height,
+        }}
+        className="relative"
+      >
+        <div
+          className={cn(
+            "absolute inset-0 rounded-full",
+            "bg-gradient-to-r from-primary/[0.15] to-transparent",
+            "backdrop-blur-[2px] border-2 border-primary/[0.20]",
+            "shadow-[0_8px_32px_0_rgba(20,184,166,0.15)]",
+            "after:absolute after:inset-0 after:rounded-full",
+            "after:bg-[radial-gradient(circle_at_50%_50%,rgba(20,184,166,0.25),transparent_70%)]"
+          )}
+        />
+      </motion.div>
+    </motion.div>
+  );
+}
+
 export default function HeroSection({ language, onGetStarted }: HeroSectionProps) {
   const t = content[language];
 
@@ -32,6 +97,48 @@ export default function HeroSection({ language, onGetStarted }: HeroSectionProps
         style={{ backgroundImage: `url(${heroImage})` }}
       >
         <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/30 to-black/50" />
+      </div>
+
+      <div className="absolute inset-0 overflow-hidden">
+        <ElegantShape
+          delay={0.3}
+          width={600}
+          height={140}
+          rotate={12}
+          className="left-[-10%] md:left-[-5%] top-[15%] md:top-[20%]"
+        />
+
+        <ElegantShape
+          delay={0.5}
+          width={500}
+          height={120}
+          rotate={-15}
+          className="right-[-5%] md:right-[0%] top-[70%] md:top-[75%]"
+        />
+
+        <ElegantShape
+          delay={0.4}
+          width={300}
+          height={80}
+          rotate={-8}
+          className="left-[5%] md:left-[10%] bottom-[5%] md:bottom-[10%]"
+        />
+
+        <ElegantShape
+          delay={0.6}
+          width={200}
+          height={60}
+          rotate={20}
+          className="right-[15%] md:right-[20%] top-[10%] md:top-[15%]"
+        />
+
+        <ElegantShape
+          delay={0.7}
+          width={150}
+          height={40}
+          rotate={-25}
+          className="left-[20%] md:left-[25%] top-[5%] md:top-[10%]"
+        />
       </div>
       
       <div className="relative z-10 max-w-4xl mx-auto px-6 text-center text-white">
