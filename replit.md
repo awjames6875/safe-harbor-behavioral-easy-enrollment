@@ -8,7 +8,15 @@ The application serves as a modern enrollment portal that integrates with GoHigh
 
 ## Recent Changes
 
-**November 11, 2025:**
+**November 11, 2025 (Component Upgrade):**
+- Integrated premium 21st.dev components for enhanced user experience
+- Added GlowingEffect component to hero buttons with animated glowing borders that follow mouse cursor
+- Enhanced StepsSection cards with gradient overlays, animated accent bars, and smooth hover transitions
+- Implemented aurora-like gradient animations in hero background (subtle teal pulsing effect)
+- Upgraded button styling with prominent border-2 and enhanced interactive effects
+- All enhancements maintain existing teal color scheme (HSL 174 72% 28%)
+
+**November 11, 2025 (Earlier):**
 - Added animated floating geometric shapes to hero section using framer-motion
 - Generated unique portrait photos for all 4 testimonials (Maria, David, Carmen, James)
 - Implemented smooth scrolling marquee animation for testimonials section
