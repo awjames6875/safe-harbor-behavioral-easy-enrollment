@@ -3,6 +3,7 @@ import { Play } from "lucide-react";
 import { motion } from "framer-motion";
 import heroImage from "@assets/generated_images/Daycare_hero_with_brown_children_21832bcc.png";
 import { cn } from "@/lib/utils";
+import { GlowingEffect } from "@/components/ui/glowing-effect";
 
 interface HeroSectionProps {
   language: "en" | "es";
@@ -99,6 +100,11 @@ export default function HeroSection({ language, onGetStarted }: HeroSectionProps
         <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/30 to-black/50" />
       </div>
 
+      <div className="absolute inset-0 opacity-30">
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-transparent to-primary/10 animate-pulse" style={{ animationDuration: '8s' }} />
+        <div className="absolute inset-0 bg-gradient-to-tl from-primary/15 via-transparent to-accent/10" style={{ animation: 'pulse 12s ease-in-out infinite' }} />
+      </div>
+
       <div className="absolute inset-0 overflow-hidden">
         <ElegantShape
           delay={0.3}
@@ -150,23 +156,29 @@ export default function HeroSection({ language, onGetStarted }: HeroSectionProps
         </p>
         
         <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-          <Button
-            size="lg"
-            onClick={onGetStarted}
-            className="text-xl font-semibold animate-pulse-glow"
-            data-testid="button-get-started"
-          >
-            {t.cta}
-          </Button>
-          <Button
-            size="lg"
-            variant="outline"
-            className="text-xl font-semibold bg-white/10 backdrop-blur-sm border-white/30 text-white"
-            data-testid="button-watch-video"
-          >
-            <Play className="w-6 h-6 mr-2" />
-            {t.watchVideo}
-          </Button>
+          <div className="relative">
+            <Button
+              size="lg"
+              onClick={onGetStarted}
+              className="text-xl font-semibold relative overflow-visible border-2"
+              data-testid="button-get-started"
+            >
+              <GlowingEffect disabled={false} borderWidth={2} blur={8} proximity={150} spread={30} />
+              {t.cta}
+            </Button>
+          </div>
+          <div className="relative">
+            <Button
+              size="lg"
+              variant="outline"
+              className="text-xl font-semibold bg-white/10 backdrop-blur-sm border-2 border-white/30 text-white relative overflow-visible"
+              data-testid="button-watch-video"
+            >
+              <GlowingEffect disabled={false} borderWidth={2} blur={6} proximity={150} spread={25} variant="white" />
+              <Play className="w-6 h-6 mr-2" />
+              {t.watchVideo}
+            </Button>
+          </div>
         </div>
       </div>
     </section>

@@ -68,21 +68,25 @@ export default function StepsSection({ language }: StepsSectionProps) {
           {t.steps.map((step) => (
             <Card
               key={step.number}
-              className="p-8 text-center hover-elevate"
+              className="p-8 text-center hover-elevate relative group border-2 overflow-hidden transition-all duration-300"
               data-testid={`card-step-${step.number}`}
             >
-              <div className="flex flex-col items-center">
-                <div className="w-20 h-20 rounded-full bg-primary text-primary-foreground flex items-center justify-center text-3xl font-bold mb-6">
+              <div className="absolute inset-0 bg-gradient-to-b from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
+              
+              <div className="absolute left-0 top-0 bottom-0 w-1 bg-primary/30 group-hover:w-2 group-hover:bg-primary transition-all duration-300 rounded-r-full" />
+              
+              <div className="flex flex-col items-center relative z-10">
+                <div className="w-20 h-20 rounded-full bg-primary text-primary-foreground flex items-center justify-center text-3xl font-bold mb-6 transition-all duration-300 group-hover:scale-110 group-hover:shadow-lg">
                   {step.number}
                 </div>
                 
-                <step.icon className="w-14 h-14 text-primary mb-4" />
+                <step.icon className="w-14 h-14 text-primary mb-4 transition-all duration-300 group-hover:scale-110 group-hover:text-primary/80" />
                 
-                <h3 className="text-2xl md:text-3xl font-semibold mb-4">
+                <h3 className="text-2xl md:text-3xl font-semibold mb-4 transition-all duration-300 group-hover:translate-x-1">
                   {step.title}
                 </h3>
                 
-                <p className="text-lg text-muted-foreground leading-relaxed">
+                <p className="text-lg text-muted-foreground leading-relaxed transition-colors duration-300 group-hover:text-foreground">
                   {step.description}
                 </p>
               </div>
