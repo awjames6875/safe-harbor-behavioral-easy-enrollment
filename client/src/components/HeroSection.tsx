@@ -97,7 +97,7 @@ export default function HeroSection({ language, onGetStarted }: HeroSectionProps
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-24">
       <div 
-        className="absolute inset-0 bg-cover bg-center"
+        className="absolute inset-0 bg-cover bg-center hero-live-photo"
         style={{ backgroundImage: `url(${heroImage})` }}
       >
         <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/30 to-black/50" />
