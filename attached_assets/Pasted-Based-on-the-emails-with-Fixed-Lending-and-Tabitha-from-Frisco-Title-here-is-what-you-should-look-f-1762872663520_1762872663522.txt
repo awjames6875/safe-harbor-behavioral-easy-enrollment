@@ -1,0 +1,28 @@
+Based on the emails with Fixed Lending and Tabitha from Frisco Title, here is what you should look for in your Closing Disclosure (CD), covering both the specific point of discussion in your thread and general best practices:
+
+### 1\. Specific Item from Your Emails
+
+  * **Fixed Lending Processing Fee:** Verify that the **$795 processing fee** from Fixed Lending is either **not included** or **waived**, as there was a discussion about it being on the statement, and Tabitha confirmed a recent statement showed it was *not* included.
+
+### 2\. General Best Practices for Reviewing Your Closing Disclosure (CD)
+
+The Closing Disclosure is a five-page form that provides the final details about your loan and closing costs, and you should receive it at least three business days before closing. You should compare it against the initial Loan Estimate you received.
+
+**Key Details to Double-Check:**
+
+  * **Personal and Property Information:** Ensure your full legal name (and co-borrower's), property address, and loan details are all spelled and listed correctly.
+  * **Loan Terms:** Verify that the key details of the loan match what you agreed upon:
+      * **Loan Amount (Principal)**
+      * **Interest Rate:** Even a small change can significantly impact your total cost over the life of the loan.
+      * **Loan Term** (e.g., 30-year fixed)
+      * **Estimated Monthly Payment:** Check that the final total payment, which includes principal, interest, taxes, and insurance (PITI), is what you expected.
+      * **Prepayment Penalty** or **Balloon Payments:** Ensure these are noted accurately or are confirmed as *not* included, if that was your agreement.
+  * **Transaction Costs (Closing Costs):** Review the itemized breakdown of closing costs:
+      * Check for any unexpected or new charges that were not on your initial Loan Estimate.
+      * Verify that all fees, such as title fees, recording fees, and appraisal fees, match your previous agreements and that the correct party (buyer or seller) is responsible for each cost.
+      * Confirm the final **Net Proceeds to Seller** (if you are the seller) or the **Cash to Close** (if you are the borrower) is accurate.
+  * **Loan Payoffs and Credits:**
+      * If you are paying off an existing mortgage, confirm the **payoff amount** is accurate and up-to-date.
+      * Verify that any agreed-upon **seller credits** or concessions are properly applied.
+
+If you find any discrepancies, you should immediately contact your title company (Tabitha) or your lender (Fixed Lending) before signing the documents.
