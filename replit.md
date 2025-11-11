@@ -8,12 +8,16 @@ The application serves as a modern enrollment portal that integrates with GoHigh
 
 ## Recent Changes
 
-**November 11, 2025 (Component Upgrade):**
+**November 11, 2025 (Component Upgrade & Video Modal):**
 - Integrated premium 21st.dev components for enhanced user experience
 - Added GlowingEffect component to hero buttons with animated glowing borders that follow mouse cursor
 - Enhanced StepsSection cards with gradient overlays, animated accent bars, and smooth hover transitions
 - Implemented aurora-like gradient animations in hero background (subtle teal pulsing effect)
 - Upgraded button styling with prominent border-2 and enhanced interactive effects
+- Created VideoModal component with shadcn Dialog for YouTube video playback
+- Integrated video modal with "Watch Video" button in hero section
+- Added bilingual accessibility support (English/Spanish) with screen-reader-friendly titles
+- Video modal features responsive 16:9 aspect ratio, multiple close methods (button, Escape, backdrop click)
 - All enhancements maintain existing teal color scheme (HSL 174 72% 28%)
 
 **November 11, 2025 (Earlier):**
