@@ -9,6 +9,8 @@ The application serves as a modern enrollment portal that integrates with GoHigh
 ## Recent Changes
 
 **November 11, 2025:**
+- Added animated floating geometric shapes to hero section using framer-motion
+- Generated unique portrait photos for all 4 testimonials (Maria, David, Carmen, James)
 - Implemented smooth scrolling marquee animation for testimonials section
 - Added hover-to-pause functionality using Tailwind group utilities
 - Expanded testimonials from 2 to 4 parent quotes for richer content
