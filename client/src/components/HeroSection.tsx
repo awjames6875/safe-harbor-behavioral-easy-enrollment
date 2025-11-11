@@ -1,9 +1,11 @@
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Play } from "lucide-react";
 import { motion } from "framer-motion";
 import heroImage from "@assets/generated_images/Daycare_hero_with_brown_children_21832bcc.png";
 import { cn } from "@/lib/utils";
 import { GlowingEffect } from "@/components/ui/glowing-effect";
+import VideoModal from "@/components/VideoModal";
 
 interface HeroSectionProps {
   language: "en" | "es";
@@ -90,6 +92,7 @@ function ElegantShape({
 
 export default function HeroSection({ language, onGetStarted }: HeroSectionProps) {
   const t = content[language];
+  const [isVideoOpen, setIsVideoOpen] = useState(false);
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-24">
@@ -171,6 +174,7 @@ export default function HeroSection({ language, onGetStarted }: HeroSectionProps
             <Button
               size="lg"
               variant="outline"
+              onClick={() => setIsVideoOpen(true)}
               className="text-xl font-semibold bg-white/10 backdrop-blur-sm border-2 border-white/30 text-white relative overflow-visible"
               data-testid="button-watch-video"
             >
@@ -181,6 +185,12 @@ export default function HeroSection({ language, onGetStarted }: HeroSectionProps
           </div>
         </div>
       </div>
+
+      <VideoModal 
+        open={isVideoOpen}
+        onOpenChange={setIsVideoOpen}
+        language={language}
+      />
     </section>
   );
 }
