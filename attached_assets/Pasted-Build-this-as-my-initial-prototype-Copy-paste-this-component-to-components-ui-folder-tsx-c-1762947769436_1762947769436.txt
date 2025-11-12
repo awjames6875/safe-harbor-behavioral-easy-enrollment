@@ -1,0 +1,404 @@
+Build this as my initial prototype
+
+Copy-paste this component to /components/ui folder:
+```tsx
+chat-bubble.tsx
+"use client"
+
+import * as React from "react"
+import { cn } from "@/lib/utils"
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
+import { Button } from "@/components/ui/button"
+import { MessageLoading } from "@/components/ui/message-loading";
+
+interface ChatBubbleProps {
+  variant?: "sent" | "received"
+  layout?: "default" | "ai"
+  className?: string
+  children: React.ReactNode
+}
+
+export function ChatBubble({
+  variant = "received",
+  layout = "default",
+  className,
+  children,
+}: ChatBubbleProps) {
+  return (
+    <div
+      className={cn(
+        "flex items-start gap-2 mb-4",
+        variant === "sent" && "flex-row-reverse",
+        className,
+      )}
+    >
+      {children}
+    </div>
+  )
+}
+
+interface ChatBubbleMessageProps {
+  variant?: "sent" | "received"
+  isLoading?: boolean
+  className?: string
+  children?: React.ReactNode
+}
+
+export function ChatBubbleMessage({
+  variant = "received",
+  isLoading,
+  className,
+  children,
+}: ChatBubbleMessageProps) {
+  return (
+    <div
+      className={cn(
+        "rounded-lg p-3",
+        variant === "sent" ? "bg-primary text-primary-foreground" : "bg-muted",
+        className
+      )}
+    >
+      {isLoading ? (
+        <div className="flex items-center space-x-2">
+          <MessageLoading />
+        </div>
+      ) : (
+        children
+      )}
+    </div>
+  )
+}
+
+interface ChatBubbleAvatarProps {
+  src?: string
+  fallback?: string
+  className?: string
+}
+
+export function ChatBubbleAvatar({
+  src,
+  fallback = "AI",
+  className,
+}: ChatBubbleAvatarProps) {
+  return (
+    <Avatar className={cn("h-8 w-8", className)}>
+      {src && <AvatarImage src={src} />}
+      <AvatarFallback>{fallback}</AvatarFallback>
+    </Avatar>
+  )
+}
+
+interface ChatBubbleActionProps {
+  icon?: React.ReactNode
+  onClick?: () => void
+  className?: string
+}
+
+export function ChatBubbleAction({
+  icon,
+  onClick,
+  className,
+}: ChatBubbleActionProps) {
+  return (
+    <Button
+      variant="ghost"
+      size="icon"
+      className={cn("h-6 w-6", className)}
+      onClick={onClick}
+    >
+      {icon}
+    </Button>
+  )
+}
+
+export function ChatBubbleActionWrapper({
+  className,
+  children,
+}: {
+  className?: string
+  children: React.ReactNode
+}) {
+  return (
+    <div className={cn("flex items-center gap-1 mt-2", className)}>
+      {children}
+    </div>
+  )
+}
+
+
+demo.tsx
+import {
+  ChatBubble,
+  ChatBubbleAvatar,
+  ChatBubbleMessage,
+  ChatBubbleAction
+} from "@/components/ui/chat-bubble"
+import { Copy, RefreshCcw } from "lucide-react"
+
+const messages = [
+  {
+    id: 1,
+    message: "Help me with my essay.",
+    sender: "user",
+  },
+  {
+    id: 2,
+    message: "I can help you with that. What do you need help with?",
+    sender: "bot",
+  },
+]
+
+const actionIcons = [
+  { icon: Copy, type: "Copy" },
+  { icon: RefreshCcw, type: "Regenerate" },
+]
+
+export function ChatBubbleVariants() {
+  return (
+    <div className="max-w-md space-y-4 p-4">
+      <ChatBubble variant="sent">
+        <ChatBubbleAvatar fallback="US" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=64&h=64&q=80&crop=faces&fit=crop" />
+        <ChatBubbleMessage variant="sent">
+          I have a question about the library.
+        </ChatBubbleMessage>
+      </ChatBubble>
+
+      <ChatBubble variant="received">
+        <ChatBubbleAvatar fallback="AI" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=64&h=64&q=80&crop=faces&fit=crop"  />
+        <ChatBubbleMessage>
+          Sure, I'd be happy to help!
+        </ChatBubbleMessage>
+      </ChatBubble>
+    </div>
+  )
+}
+
+export function ChatBubbleAiLayout() {
+  return (
+    <div className="max-w-md divide-y">
+      {messages.map((message, index) => {
+        const variant = message.sender === "user" ? "sent" : "received"
+        return (
+          <div key={message.id} className="py-6 first:pt-0 last:pb-0">
+            <div className="flex gap-3">
+              <ChatBubbleAvatar 
+                src={variant === "sent" 
+                  ? "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=64&h=64&q=80&crop=faces&fit=crop"
+                  : "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=64&h=64&q=80&crop=faces&fit=crop"
+                }
+                fallback={variant === "sent" ? "US" : "AI"} 
+              />
+              <div className="flex-1">
+                {message.message}
+                {message.sender === "bot" && (
+                  <div className="flex gap-2 mt-2">
+                    {actionIcons.map(({ icon: Icon, type }) => (
+                      <button
+                        key={type}
+                        onClick={() => console.log(`Action ${type} clicked for message ${index}`)}
+                        className="p-1 hover:bg-muted rounded-md transition-colors"
+                      >
+                        <Icon className="size-3" />
+                      </button>
+                    ))}
+                  </div>
+                )}
+              </div>
+            </div>
+          </div>
+        )
+      })}
+    </div>
+  )
+}
+
+export function ChatBubbleStates() {
+  return (
+    <div className="max-w-md space-y-4 p-4">
+      <ChatBubble variant="received">
+        <ChatBubbleAvatar fallback="AI" />
+        <ChatBubbleMessage isLoading />
+      </ChatBubble>
+
+      <ChatBubble variant="received">
+        <ChatBubbleAvatar fallback="AI" />
+        <ChatBubbleMessage className="bg-destructive/10 text-destructive">
+          Error processing request
+        </ChatBubbleMessage>
+      </ChatBubble>
+    </div>
+  )
+}
+```
+
+Copy-paste these files for dependencies:
+```tsx
+jakobhoeg/message-loading
+// @hidden
+function MessageLoading() {
+  return (
+    <svg
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      xmlns="http://www.w3.org/2000/svg"
+      className="text-foreground"
+    >
+      <circle cx="4" cy="12" r="2" fill="currentColor">
+        <animate
+          id="spinner_qFRN"
+          begin="0;spinner_OcgL.end+0.25s"
+          attributeName="cy"
+          calcMode="spline"
+          dur="0.6s"
+          values="12;6;12"
+          keySplines=".33,.66,.66,1;.33,0,.66,.33"
+        />
+      </circle>
+      <circle cx="12" cy="12" r="2" fill="currentColor">
+        <animate
+          begin="spinner_qFRN.begin+0.1s"
+          attributeName="cy"
+          calcMode="spline"
+          dur="0.6s"
+          values="12;6;12"
+          keySplines=".33,.66,.66,1;.33,0,.66,.33"
+        />
+      </circle>
+      <circle cx="20" cy="12" r="2" fill="currentColor">
+        <animate
+          id="spinner_OcgL"
+          begin="spinner_qFRN.begin+0.2s"
+          attributeName="cy"
+          calcMode="spline"
+          dur="0.6s"
+          values="12;6;12"
+          keySplines=".33,.66,.66,1;.33,0,.66,.33"
+        />
+      </circle>
+    </svg>
+  );
+}
+
+export { MessageLoading };
+
+```
+```tsx
+shadcn/avatar
+"use client"
+
+import * as React from "react"
+import * as AvatarPrimitive from "@radix-ui/react-avatar"
+
+import { cn } from "@/lib/utils"
+
+const Avatar = React.forwardRef<
+  React.ElementRef<typeof AvatarPrimitive.Root>,
+  React.ComponentPropsWithoutRef<typeof AvatarPrimitive.Root>
+>(({ className, ...props }, ref) => (
+  <AvatarPrimitive.Root
+    ref={ref}
+    className={cn(
+      "relative flex h-10 w-10 shrink-0 overflow-hidden rounded-full",
+      className,
+    )}
+    {...props}
+  />
+))
+Avatar.displayName = AvatarPrimitive.Root.displayName
+
+const AvatarImage = React.forwardRef<
+  React.ElementRef<typeof AvatarPrimitive.Image>,
+  React.ComponentPropsWithoutRef<typeof AvatarPrimitive.Image>
+>(({ className, ...props }, ref) => (
+  <AvatarPrimitive.Image
+    ref={ref}
+    className={cn("aspect-square h-full w-full", className)}
+    {...props}
+  />
+))
+AvatarImage.displayName = AvatarPrimitive.Image.displayName
+
+const AvatarFallback = React.forwardRef<
+  React.ElementRef<typeof AvatarPrimitive.Fallback>,
+  React.ComponentPropsWithoutRef<typeof AvatarPrimitive.Fallback>
+>(({ className, ...props }, ref) => (
+  <AvatarPrimitive.Fallback
+    ref={ref}
+    className={cn(
+      "flex h-full w-full items-center justify-center rounded-full bg-muted",
+      className,
+    )}
+    {...props}
+  />
+))
+AvatarFallback.displayName = AvatarPrimitive.Fallback.displayName
+
+export { Avatar, AvatarImage, AvatarFallback }
+
+```
+```tsx
+shadcn/button
+import * as React from "react"
+import { Slot } from "@radix-ui/react-slot"
+import { cva, type VariantProps } from "class-variance-authority"
+
+import { cn } from "@/lib/utils"
+
+const buttonVariants = cva(
+  "inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50",
+  {
+    variants: {
+      variant: {
+        default: "bg-primary text-primary-foreground hover:bg-primary/90",
+        destructive:
+          "bg-destructive text-destructive-foreground hover:bg-destructive/90",
+        outline:
+          "border border-input bg-background hover:bg-accent hover:text-accent-foreground",
+        secondary:
+          "bg-secondary text-secondary-foreground hover:bg-secondary/80",
+        ghost: "hover:bg-accent hover:text-accent-foreground",
+        link: "text-primary underline-offset-4 hover:underline",
+      },
+      size: {
+        default: "h-10 px-4 py-2",
+        sm: "h-9 rounded-md px-3",
+        lg: "h-11 rounded-md px-8",
+        icon: "h-10 w-10",
+      },
+    },
+    defaultVariants: {
+      variant: "default",
+      size: "default",
+    },
+  },
+)
+
+export interface ButtonProps
+  extends React.ButtonHTMLAttributes<HTMLButtonElement>,
+    VariantProps<typeof buttonVariants> {
+  asChild?: boolean
+}
+
+const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
+  ({ className, variant, size, asChild = false, ...props }, ref) => {
+    const Comp = asChild ? Slot : "button"
+    return (
+      <Comp
+        className={cn(buttonVariants({ variant, size, className }))}
+        ref={ref}
+        {...props}
+      />
+    )
+  },
+)
+Button.displayName = "Button"
+
+export { Button, buttonVariants }
+
+```
+
+Install these NPM dependencies:
+```bash
+@radix-ui/react-avatar, @radix-ui/react-slot, class-variance-authority
+```
