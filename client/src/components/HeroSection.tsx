@@ -14,14 +14,14 @@ interface HeroSectionProps {
 
 const content = {
   en: {
-    headline: "Welcome to Safe Harbor Day Care",
-    subheadline: "We help your child grow and learn every day!",
+    headline: "Free Safe Harbor Day Care Partnership",
+    subheadline: "Join our program! We help your child grow and learn every day!",
     cta: "Start Now",
     watchVideo: "Watch Video",
   },
   es: {
-    headline: "Bienvenido a la Guardería Safe Harbor",
-    subheadline: "¡Ayudamos a su hijo a crecer y aprender cada día!",
+    headline: "Asociación Gratis de Guardería Safe Harbor",
+    subheadline: "¡Únase a nuestro programa! ¡Ayudamos a su hijo a crecer y aprender cada día!",
     cta: "Empezar Ahora",
     watchVideo: "Ver Video",
   },
