@@ -15,6 +15,29 @@ interface ChatAssistantProps {
   language: "en" | "es";
 }
 
+function parseMessageWithLinks(text: string) {
+  const urlRegex = /(https?:\/\/[^\s]+)/g;
+  const parts = text.split(urlRegex);
+  
+  return parts.map((part, index) => {
+    if (part.match(urlRegex)) {
+      return (
+        <a
+          key={index}
+          href={part}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="underline hover:text-[hsl(var(--primary))] font-medium break-all"
+          data-testid={`link-chat-url-${index}`}
+        >
+          {part}
+        </a>
+      );
+    }
+    return <span key={index}>{part}</span>;
+  });
+}
+
 export function ChatAssistant({ language }: ChatAssistantProps) {
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState<Message[]>([]);
@@ -150,7 +173,9 @@ export function ChatAssistant({ language }: ChatAssistantProps) {
                           : "bg-[hsl(var(--muted))] text-[hsl(var(--foreground))]"
                       }`}
                     >
-                      <p className="text-sm whitespace-pre-wrap">{message.content}</p>
+                      <p className="text-sm whitespace-pre-wrap">
+                        {parseMessageWithLinks(message.content)}
+                      </p>
                     </div>
                   </div>
                 ))}
