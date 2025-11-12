@@ -8,7 +8,19 @@ The application serves as a modern enrollment portal that integrates with GoHigh
 
 ## Recent Changes
 
-**November 12, 2025 (Modern Footer with Social Media Integration):**
+**November 12, 2025 (AI Assistant Chatbot Integration):**
+- Integrated Claude AI chatbot (Claude Sonnet 4.5) via Anthropic SDK using Replit AI Integrations
+- Created comprehensive knowledge base (SAFE_HARBOR_KNOWLEDGE_BASE.md) with program details, FAQs, enrollment process
+- Built ChatAssistant component with floating bubble widget appearing on all pages
+- Implemented bilingual chatbot supporting English and Spanish conversations
+- Custom system prompt emphasizes FREE program, guides parents to complete Therapy Notes forms
+- Uses parent-friendly language at 5th grade reading level, avoids clinical terms
+- Conversation history maintained throughout chat session
+- Backend API endpoint (/api/chat) transforms messages to Anthropic format
+- Chatbot themed with Safe Harbor teal colors matching site design
+- Successfully tested end-to-end in both English and Spanish with enrollment guidance
+
+**November 12, 2025 (Earlier - Modern Footer with Social Media Integration):**
 - Upgraded Footer component from basic 2-column layout to professional 3-column design inspired by 21st.dev
 - **Column 1**: Company information with Safe Harbor name, Body & Brain™ Program subtitle, and description text
 - **Column 2**: Contact details (phone, email, address) using semantic `<address>` tag for better accessibility
@@ -113,6 +125,7 @@ Preferred communication style: Simple, everyday language at 5th grade reading le
 **Component Structure:**
 - Modular, reusable components with language prop injection
 - Header component with Safe Harbor logo and language toggle (fixed positioning)
+- ChatAssistant component: Floating AI chatbot bubble appearing on all pages with bilingual support
 - Sections include: Hero, Steps, Testimonials, Form Embed, Footer
 - Separate pages for Home enrollment and Check-in functionality
 - Typography system using Inter font family with larger scale (text-5xl to text-6xl for headings)
