@@ -8,7 +8,16 @@ The application serves as a modern enrollment portal that integrates with GoHigh
 
 ## Recent Changes
 
-**November 12, 2025 (Hero Messaging & Enrollment Steps Update):**
+**November 12, 2025 (Animated Shimmer Heading for Form CTA):**
+- Created AnimatedShinyText component for continuous shimmer/glare effect on headings
+- Added CSS shimmer animation with 3-second duration, ease-in-out timing, infinite loop
+- Applied to "Sign Up Here" / "Regístrese Aquí" form heading to draw attention to enrollment form
+- Shimmer effect uses gradient that sweeps across text from left to right
+- Component respects prefers-reduced-motion accessibility setting
+- Works seamlessly in both English and Spanish
+- Performance optimized with hardware acceleration (only animates background-position)
+
+**November 12, 2025 (Earlier - Hero Messaging & Enrollment Steps Update):**
 - Updated hero headline to emphasize "Free Safe Harbor Day Care Partnership" in both English and Spanish
 - Revised subheadline to include "Join our program!" call-to-action while maintaining child development messaging
 - "Free" placement at the beginning of headline for maximum parent attention
