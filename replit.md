@@ -2,102 +2,7 @@
 
 ## Overview
 
-The Safe Harbor Easy Enrollment System is a bilingual (English/Spanish) web application designed to simplify the enrollment process for parents joining the Body & Brain™ Program at Safe Harbor Behavioral Health daycare facilities. The system provides an accessible, user-friendly interface for parent enrollment and attendance tracking through QR codes.
-
-The application serves as a modern enrollment portal that integrates with GoHighLevel (GHL) for CRM, form handling, and automated communications. It features a landing page with enrollment forms and a separate check-in system for attendance tracking at daycare sites.
-
-## Recent Changes
-
-**November 12, 2025 (AI Assistant Chatbot Integration):**
-- Integrated Claude AI chatbot (Claude Sonnet 4.5) via Anthropic SDK using Replit AI Integrations
-- Created comprehensive knowledge base (SAFE_HARBOR_KNOWLEDGE_BASE.md) with program details, FAQs, enrollment process
-- Built ChatAssistant component with floating bubble widget appearing on all pages
-- Implemented bilingual chatbot supporting English and Spanish conversations
-- Custom system prompt emphasizes FREE program, guides parents to complete Therapy Notes forms
-- Uses parent-friendly language at 5th grade reading level, avoids clinical terms
-- Conversation history maintained throughout chat session
-- Backend API endpoint (/api/chat) transforms messages to Anthropic format
-- Chatbot themed with Safe Harbor teal colors matching site design
-- Successfully tested end-to-end in both English and Spanish with enrollment guidance
-
-**November 12, 2025 (Earlier - Modern Footer with Social Media Integration):**
-- Upgraded Footer component from basic 2-column layout to professional 3-column design inspired by 21st.dev
-- **Column 1**: Company information with Safe Harbor name, Body & Brain™ Program subtitle, and description text
-- **Column 2**: Contact details (phone, email, address) using semantic `<address>` tag for better accessibility
-- **Column 3**: Social media buttons (Facebook, Instagram, Twitter) and hours of operation
-- Implemented functional social media links with circular icon buttons (rounded-full) using Button component with asChild prop
-- Added bilingual tooltip system on hover (e.g., "Follow us on Facebook" / "Síguenos en Facebook")
-- Social links open in new tabs with security attributes (target="_blank", rel="noopener noreferrer")
-- Placeholder URLs provided (facebook.com/safeharborbehavioralhealth, etc.) ready for client's actual social profiles
-- Added subtle decorative blur effect (bg-primary/10 blur-2xl) for premium modern feel
-- Enhanced typography with proper heading hierarchy (h2, h3) and larger text sizes
-- Fully responsive with 3-column (desktop), 2-column (tablet), 1-column (mobile) breakpoints
-- All content maintains 5th grade reading level in both English and Spanish
-- Preserves all original contact information and Safe Harbor teal color scheme
-
-**November 12, 2025 (Earlier - Sparkles Animation on Testimonials Heading):**
-- Created SparklesText component for animated sparkle effects around text
-- Component uses framer-motion for smooth SVG star animations (fade, scale, rotate)
-- Implemented polymorphic "as" prop to support any HTML element (h1, h2, p, div, etc.)
-- Applied to "What Parents Say" / "Lo Que Dicen Los Padres" testimonials heading with as="h2"
-- Sparkles use Safe Harbor teal colors (#2D9B92, #4FC3B8) matching brand theme
-- 8 sparkles continuously regenerate with random positions, delays, and lifespans
-- Each sparkle animates for 0.8s with infinite repeat (opacity, scale, rotation)
-- Sparkles marked aria-hidden="true" for screen reader accessibility
-- Maintains proper semantic HTML structure for SEO and navigation
-- Works seamlessly in both English and Spanish
-
-**November 12, 2025 (Earlier - Animated Shimmer Heading for Form CTA):**
-- Created AnimatedShinyText component for continuous shimmer/glare effect on headings
-- Added CSS shimmer animation with 3-second duration, ease-in-out timing, infinite loop
-- Applied to "Sign Up Here" / "Regístrese Aquí" form heading to draw attention to enrollment form
-- Shimmer effect uses gradient that sweeps across text from left to right
-- Component respects prefers-reduced-motion accessibility setting
-- Works seamlessly in both English and Spanish
-- Performance optimized with hardware acceleration (only animates background-position)
-
-**November 12, 2025 (Earlier - Hero Messaging & Enrollment Steps Update):**
-- Updated hero headline to emphasize "Free Safe Harbor Day Care Partnership" in both English and Spanish
-- Revised subheadline to include "Join our program!" call-to-action while maintaining child development messaging
-- "Free" placement at the beginning of headline for maximum parent attention
-- Redesigned 3-step enrollment process to match actual workflow:
-  - Step 1: Watch Welcome Video (directs parents to watch the welcome video)
-  - Step 2: Fill Out Form Below (clearly tells them to complete the GoHighLevel form on the page)
-  - Step 3: Check Email & Finish (explains they'll receive emails for Therapy Notes forms and booking link)
-- Updated step icons to Play, FileText, and Mail for better visual clarity
-- All text remains at 5th grade reading level
-- Safe Harbor branding preserved throughout messaging
-
-**November 11, 2025 (Component Upgrade & Video Modal & Live Photo Effect):**
-- Integrated premium 21st.dev components for enhanced user experience
-- Added GlowingEffect component to hero buttons with animated glowing borders that follow mouse cursor
-- Enhanced StepsSection cards with gradient overlays, animated accent bars, and smooth hover transitions
-- Implemented aurora-like gradient animations in hero background (subtle teal pulsing effect)
-- Upgraded button styling with prominent border-2 and enhanced interactive effects
-- Created VideoModal component with shadcn Dialog for YouTube video playback
-- Integrated video modal with "Watch Video" button in hero section
-- Added bilingual accessibility support (English/Spanish) with screen-reader-friendly titles
-- Video modal features responsive 16:9 aspect ratio, multiple close methods (button, Escape, backdrop click)
-- Implemented "live photo" effect on hero background: smooth 5-second zoom-in animation (100% to 110% scale) that plays once on page load, creating the illusion of kids and teachers coming alive
-- Added accessibility support with prefers-reduced-motion media query to respect user motion preferences
-- All enhancements maintain existing teal color scheme (HSL 174 72% 28%)
-
-**November 11, 2025 (Earlier):**
-- Added animated floating geometric shapes to hero section using framer-motion
-- Generated unique portrait photos for all 4 testimonials (Maria, David, Carmen, James)
-- Implemented smooth scrolling marquee animation for testimonials section
-- Added hover-to-pause functionality using Tailwind group utilities
-- Expanded testimonials from 2 to 4 parent quotes for richer content
-- Created seamless infinite loop with duplicated testimonial arrays
-
-**November 10, 2025:**
-- Added Safe Harbor lighthouse logo to fixed header on all pages
-- Updated all imagery to show diverse brown-skinned children and brown caregivers in daycare settings
-- Simplified all content to 5th grade reading level in both English and Spanish
-- Implemented pulse-glow animation on primary "Start Now" call-to-action button
-- Increased font sizes across the site for better readability (headings: text-5xl to text-6xl, body: text-lg to text-xl)
-- Fixed routing issue for /check-in page
-- Created reusable Header component with logo (left) and language toggle (right)
+The Safe Harbor Easy Enrollment System is a bilingual (English/Spanish) web application designed to streamline the enrollment process for parents joining the Body & Brain™ Program at Safe Harbor Behavioral Health daycare facilities. It provides a user-friendly interface for parent enrollment, integrates with GoHighLevel for CRM and automated communications, and features QR code-based attendance tracking. The system aims to be an accessible, modern enrollment portal, simplifying operations for Safe Harbor and enhancing the experience for parents.
 
 ## User Preferences
 
@@ -109,33 +14,28 @@ Preferred communication style: Simple, everyday language at 5th grade reading le
 
 **Technology Stack:**
 - **Framework**: React with TypeScript
-- **Routing**: Wouter (lightweight client-side routing)
+- **Routing**: Wouter
 - **UI Components**: shadcn/ui with Radix UI primitives
 - **Styling**: Tailwind CSS with custom design system
 - **State Management**: React hooks for local state, TanStack Query for server state
 - **Build Tool**: Vite
 
 **Design Principles:**
-- **Accessibility-First**: Large touch targets, high contrast, clear visual hierarchy optimized for all parents. Larger font sizes (text-lg to text-6xl) and increased button sizes for easier reading and clicking.
-- **Bilingual Parity**: Equal visual weight for English and Spanish content with language toggle. All content simplified to 5th grade reading level.
-- **Progressive Disclosure**: Information revealed in digestible chunks to avoid overwhelming users
-- **Healthcare-Focused**: Combines healthcare portal clarity with modern SaaS onboarding simplicity
-- **Inclusive Imagery**: All photos feature diverse brown-skinned children and brown caregivers in authentic daycare settings
+- **Accessibility-First**: Large touch targets, high contrast, clear visual hierarchy, larger font sizes, and increased button sizes.
+- **Bilingual Parity**: Equal visual weight for English and Spanish content with a language toggle; all content at a 5th-grade reading level.
+- **Progressive Disclosure**: Information presented in digestible chunks.
+- **Healthcare-Focused**: Combines healthcare portal clarity with modern SaaS onboarding simplicity.
+- **Inclusive Imagery**: Features diverse brown-skinned children and caregivers.
+- **UI/UX**: Features include animated elements (sparkles, shimmer headings, glowing buttons, aurora-like background gradients, floating geometric shapes), a "live photo" zoom effect on hero background, a responsive modern footer, and an integrated AI chatbot with professional chat bubbles and an enhanced visibility launcher.
 
 **Component Structure:**
-- Modular, reusable components with language prop injection
-- Header component with Safe Harbor logo and language toggle (fixed positioning)
-- ChatAssistant component: Floating AI chatbot bubble appearing on all pages with bilingual support
-- Sections include: Hero, Steps, Testimonials, Form Embed, Footer
-- Separate pages for Home enrollment and Check-in functionality
-- Typography system using Inter font family with larger scale (text-5xl to text-6xl for headings)
-- Spacing based on Tailwind's 4-unit system (4, 6, 8, 12, 16, 20, 24)
-- Custom pulse-glow animation for primary CTA buttons
+- Modular and reusable components with language prop injection.
+- Key sections: Hero, Steps, Testimonials, Form Embed, Footer, and a ChatAssistant component.
+- Separate pages for Home enrollment and Check-in functionality.
+- Typography system using Inter font family with a larger scale.
 
 **Responsive Strategy:**
-- Mobile-first approach with breakpoint adaptations
-- Container max-widths: 6xl for sections, 4xl for content, 2xl for forms
-- Generous vertical rhythm with py-16/py-24 section padding
+- Mobile-first approach with breakpoint adaptations for different screen sizes.
 
 ### Backend Architecture
 
@@ -146,81 +46,42 @@ Preferred communication style: Simple, everyday language at 5th grade reading le
 - **Production**: Static file serving of built React app
 
 **API Strategy:**
-- RESTful endpoints prefixed with `/api`
-- Minimal backend logic - primary processing handled by GoHighLevel
-- Storage interface pattern for future database integration
-- Currently using in-memory storage (MemStorage) as placeholder
-
-**Route Handling:**
-- Request/response logging middleware
-- JSON body parsing with raw body preservation for webhook verification
-- Catch-all routing to serve React SPA
+- RESTful endpoints prefixed with `/api`.
+- Minimal backend logic, primarily handled by GoHighLevel.
+- Currently uses in-memory storage (`MemStorage`) as a placeholder.
 
 ### Data Storage Solutions
 
 **Current Implementation:**
-- In-memory storage interface (`MemStorage`) for development
-- User schema defined with Drizzle ORM for future PostgreSQL migration
+- In-memory storage interface (`MemStorage`) for development.
 
 **Planned Database:**
-- PostgreSQL via Neon Database (@neondatabase/serverless)
-- Drizzle ORM for type-safe database operations
-- Schema includes users table with UUID primary keys
+- PostgreSQL via Neon Database.
+- Drizzle ORM for type-safe database operations.
 
 **Data Model:**
-According to PRD documentation, the system tracks:
-- Contact information (parent/child details)
-- QR code URLs for attendance tracking
-- Check-in dates and daycare associations
-- Language preferences for message routing
-- Paperwork completion status
-
-**Migration Strategy:**
-- Drizzle Kit configured for schema migrations
-- Database credentials via environment variables
-- Push-based deployment model (`db:push` script)
+- Tracks contact information (parent/child details), QR code URLs for attendance, check-in dates, daycare associations, language preferences, and paperwork completion status.
 
 ### Authentication and Authorization
 
 **Current State:**
-- Basic user schema with username/password fields
-- No active authentication implementation
-- Session infrastructure prepared (connect-pg-simple for future use)
+- Basic user schema, no active authentication implemented.
 
 **Planned Approach:**
-- Session-based authentication with PostgreSQL session store
-- Cookie-based session management
-- User roles to differentiate parents from staff
+- Session-based authentication with PostgreSQL session store and cookie-based session management.
+- User roles to differentiate parents from staff.
 
-### External Dependencies
+## External Dependencies
 
-**Primary CRM Integration:**
-- **GoHighLevel (GHL)**: Handles form submissions, contact management, automated workflows, SMS/email campaigns, and appointment scheduling
-- Form embeds integrated into landing page
-- Webhook support planned for bi-directional data sync
-
-**Third-Party Services:**
-- **QR Code Generation**: goqr.me API for creating attendance QR codes
-- **Video Hosting**: YouTube/Loom for welcome videos and training content
-- **Font Delivery**: Google Fonts CDN (Inter font family)
-
-**Development Tools:**
-- Replit-specific plugins for runtime error overlay and dev tooling
-- Vite plugins for React, error handling, and development experience
-
-**UI Component Libraries:**
-- Radix UI primitives (26+ component packages) for accessible, unstyled components
-- shadcn/ui configuration for component styling
-- Lucide React for icons
-- class-variance-authority and clsx for conditional styling
-
-**Utility Libraries:**
-- date-fns for date manipulation
-- zod for schema validation (integrated with Drizzle)
-- embla-carousel-react for carousel functionality
-- TanStack React Query for server state management
-
-**Hosting & Deployment:**
-- Primary domain: safeharboreasyenrollment.com
-- Replit hosting platform
-- Static asset serving from attached_assets directory
+- **GoHighLevel (GHL)**: For CRM, form submissions, contact management, automated workflows, SMS/email campaigns, and appointment scheduling.
+- **Anthropic SDK (Claude AI)**: Integrated for the AI chatbot functionality (Claude Sonnet 4.5).
+- **Goqr.me API**: For generating attendance QR codes.
+- **YouTube/Loom**: For video hosting.
+- **Google Fonts CDN**: For the Inter font family.
+- **Radix UI primitives & shadcn/ui**: For UI components.
+- **Lucide React**: For icons.
+- **date-fns**: For date manipulation.
+- **zod**: For schema validation.
+- **embla-carousel-react**: For carousel functionality.
+- **TanStack React Query**: For server state management.
+- **Replit**: Hosting platform.
