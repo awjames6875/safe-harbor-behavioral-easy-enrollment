@@ -8,6 +8,13 @@ The application serves as a modern enrollment portal that integrates with GoHigh
 
 ## Recent Changes
 
+**November 12, 2025 (Hero Messaging Update):**
+- Updated hero headline to emphasize "Free Safe Harbor Day Care Partnership" in both English and Spanish
+- Revised subheadline to include "Join our program!" call-to-action while maintaining child development messaging
+- "Free" placement at the beginning of headline for maximum parent attention
+- All text remains at 5th grade reading level
+- Safe Harbor branding preserved throughout messaging
+
 **November 11, 2025 (Component Upgrade & Video Modal & Live Photo Effect):**
 - Integrated premium 21st.dev components for enhanced user experience
 - Added GlowingEffect component to hero buttons with animated glowing borders that follow mouse cursor
