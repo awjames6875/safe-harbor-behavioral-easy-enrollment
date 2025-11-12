@@ -6,6 +6,7 @@ import { Label } from "@/components/ui/label";
 import { CheckCircle, QrCode } from "lucide-react";
 import { Link } from "wouter";
 import Header from "@/components/Header";
+import { ChatAssistant } from "@/components/ChatAssistant";
 
 const content = {
   en: {
@@ -141,6 +142,8 @@ export default function CheckIn() {
           )}
         </Card>
       </div>
+      
+      <ChatAssistant language={language} />
     </div>
   );
 }

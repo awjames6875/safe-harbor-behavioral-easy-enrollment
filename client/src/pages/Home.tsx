@@ -5,6 +5,7 @@ import StepsSection from "@/components/StepsSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import FormEmbedSection from "@/components/FormEmbedSection";
 import Footer from "@/components/Footer";
+import { ChatAssistant } from "@/components/ChatAssistant";
 
 export default function Home() {
   const [language, setLanguage] = useState<"en" | "es">("en");
@@ -23,6 +24,8 @@ export default function Home() {
       <TestimonialsSection language={language} />
       <FormEmbedSection language={language} />
       <Footer language={language} />
+      
+      <ChatAssistant language={language} />
     </div>
   );
 }
