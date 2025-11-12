@@ -8,7 +8,19 @@ The application serves as a modern enrollment portal that integrates with GoHigh
 
 ## Recent Changes
 
-**November 12, 2025 (Animated Shimmer Heading for Form CTA):**
+**November 12, 2025 (Sparkles Animation on Testimonials Heading):**
+- Created SparklesText component for animated sparkle effects around text
+- Component uses framer-motion for smooth SVG star animations (fade, scale, rotate)
+- Implemented polymorphic "as" prop to support any HTML element (h1, h2, p, div, etc.)
+- Applied to "What Parents Say" / "Lo Que Dicen Los Padres" testimonials heading with as="h2"
+- Sparkles use Safe Harbor teal colors (#2D9B92, #4FC3B8) matching brand theme
+- 8 sparkles continuously regenerate with random positions, delays, and lifespans
+- Each sparkle animates for 0.8s with infinite repeat (opacity, scale, rotation)
+- Sparkles marked aria-hidden="true" for screen reader accessibility
+- Maintains proper semantic HTML structure for SEO and navigation
+- Works seamlessly in both English and Spanish
+
+**November 12, 2025 (Earlier - Animated Shimmer Heading for Form CTA):**
 - Created AnimatedShinyText component for continuous shimmer/glare effect on headings
 - Added CSS shimmer animation with 3-second duration, ease-in-out timing, infinite loop
 - Applied to "Sign Up Here" / "Regístrese Aquí" form heading to draw attention to enrollment form
