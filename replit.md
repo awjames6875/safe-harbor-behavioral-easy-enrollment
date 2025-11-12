@@ -8,10 +8,15 @@ The application serves as a modern enrollment portal that integrates with GoHigh
 
 ## Recent Changes
 
-**November 12, 2025 (Hero Messaging Update):**
+**November 12, 2025 (Hero Messaging & Enrollment Steps Update):**
 - Updated hero headline to emphasize "Free Safe Harbor Day Care Partnership" in both English and Spanish
 - Revised subheadline to include "Join our program!" call-to-action while maintaining child development messaging
 - "Free" placement at the beginning of headline for maximum parent attention
+- Redesigned 3-step enrollment process to match actual workflow:
+  - Step 1: Watch Welcome Video (directs parents to watch the welcome video)
+  - Step 2: Fill Out Form Below (clearly tells them to complete the GoHighLevel form on the page)
+  - Step 3: Check Email & Finish (explains they'll receive emails for Therapy Notes forms and booking link)
+- Updated step icons to Play, FileText, and Mail for better visual clarity
 - All text remains at 5th grade reading level
 - Safe Harbor branding preserved throughout messaging
 
