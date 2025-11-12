@@ -5,6 +5,7 @@ import { Input } from "@/components/ui/input";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { MessageCircle, X, Send, Loader2 } from "lucide-react";
 import { useMutation } from "@tanstack/react-query";
+import assistantAvatar from "@assets/generated_images/friendly_customer_service_representative_5ad4b82f.png";
 
 interface Message {
   role: "user" | "assistant";
@@ -50,12 +51,16 @@ export function ChatAssistant({ language }: ChatAssistantProps) {
       placeholder: "Ask about our program...",
       initialMessage: "Hi! I'm here to help you learn about our FREE Body & Brain Program for your child. What questions do you have?",
       sending: "Sending...",
+      widgetGreeting: "Need Help?",
+      widgetSubtext: "Chat with us!",
     },
     es: {
       title: "Chat con Asistente de Safe Harbor",
       placeholder: "Pregunte sobre nuestro programa...",
       initialMessage: "¡Hola! Estoy aquí para ayudarle a conocer nuestro programa GRATIS Body & Brain para su hijo. ¿Qué preguntas tiene?",
       sending: "Enviando...",
+      widgetGreeting: "¿Necesita Ayuda?",
+      widgetSubtext: "¡Chatea con nosotros!",
     },
   };
 
@@ -133,14 +138,31 @@ export function ChatAssistant({ language }: ChatAssistantProps) {
   return (
     <>
       {!isOpen && (
-        <Button
-          size="icon"
-          className="fixed bottom-6 right-6 h-14 w-14 rounded-full shadow-lg z-50 bg-[hsl(var(--primary))] hover:bg-[hsl(var(--primary))]/90"
+        <button
           onClick={() => setIsOpen(true)}
           data-testid="button-open-chat"
+          className="fixed bottom-6 right-6 z-50 group cursor-pointer animate-bounce-subtle"
         >
-          <MessageCircle className="h-6 w-6" />
-        </Button>
+          <div className="flex items-center gap-3 bg-white dark:bg-card rounded-2xl shadow-2xl p-3 pr-5 hover-elevate active-elevate-2 border-2 border-[hsl(var(--primary))]">
+            <div className="relative">
+              <img
+                src={assistantAvatar}
+                alt="Safe Harbor Assistant"
+                className="w-16 h-16 rounded-full object-cover border-2 border-[hsl(var(--primary))]"
+              />
+              <div className="absolute -bottom-1 -right-1 w-5 h-5 bg-green-500 rounded-full border-2 border-white"></div>
+            </div>
+            <div className="text-left">
+              <p className="font-semibold text-[hsl(var(--foreground))] text-base">
+                {t.widgetGreeting}
+              </p>
+              <p className="text-sm text-[hsl(var(--muted-foreground))]">
+                {t.widgetSubtext}
+              </p>
+            </div>
+            <MessageCircle className="w-5 h-5 text-[hsl(var(--primary))] ml-1" />
+          </div>
+        </button>
       )}
 
       {isOpen && (
