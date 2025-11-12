@@ -19,7 +19,7 @@ const content = {
     contact: "Contact Us",
     phone: "(918) 555-1212",
     email: "support@safeharborbehavioralhealth.com",
-    address: "123 Healthcare Blvd, Tulsa, OK 74104",
+    address: "2510 E 15th St, Tulsa, OK 74104",
     hours: "Monday - Friday: 8am - 6pm",
     connect: "Connect With Us",
     socialTooltips: {
@@ -36,7 +36,7 @@ const content = {
     contact: "Contáctenos",
     phone: "(918) 555-1212",
     email: "support@safeharborbehavioralhealth.com",
-    address: "123 Healthcare Blvd, Tulsa, OK 74104",
+    address: "2510 E 15th St, Tulsa, OK 74104",
     hours: "Lunes - Viernes: 8am - 6pm",
     connect: "Conéctese Con Nosotros",
     socialTooltips: {
