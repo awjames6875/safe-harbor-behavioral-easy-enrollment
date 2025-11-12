@@ -3,9 +3,10 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { ScrollArea } from "@/components/ui/scroll-area";
-import { MessageCircle, X, Send, Loader2 } from "lucide-react";
+import { MessageCircle, X, Send } from "lucide-react";
 import { useMutation } from "@tanstack/react-query";
 import assistantAvatar from "@assets/generated_images/friendly_customer_service_representative_5ad4b82f.png";
+import { ChatBubble, ChatBubbleAvatar, ChatBubbleMessage } from "@/components/ui/chat-bubble";
 
 interface Message {
   role: "user" | "assistant";
@@ -181,32 +182,35 @@ export function ChatAssistant({ language }: ChatAssistantProps) {
 
           <CardContent className="flex-1 overflow-hidden p-0">
             <ScrollArea className="h-full p-4" ref={scrollAreaRef}>
-              <div className="space-y-4">
-                {messages.map((message, index) => (
-                  <div
-                    key={index}
-                    className={`flex ${message.role === "user" ? "justify-end" : "justify-start"}`}
-                    data-testid={`message-${message.role}-${index}`}
-                  >
-                    <div
-                      className={`max-w-[80%] rounded-lg px-4 py-2 ${
-                        message.role === "user"
-                          ? "bg-[hsl(var(--primary))] text-[hsl(var(--primary-foreground))]"
-                          : "bg-[hsl(var(--muted))] text-[hsl(var(--foreground))]"
-                      }`}
+              <div className="space-y-2">
+                {messages.map((message, index) => {
+                  const variant = message.role === "user" ? "sent" : "received";
+                  return (
+                    <ChatBubble 
+                      key={index} 
+                      variant={variant}
+                      data-testid={`message-${message.role}-${index}`}
                     >
-                      <p className="text-sm whitespace-pre-wrap">
-                        {parseMessageWithLinks(message.content)}
-                      </p>
-                    </div>
-                  </div>
-                ))}
+                      <ChatBubbleAvatar 
+                        src={message.role === "assistant" ? assistantAvatar : undefined}
+                        fallback={message.role === "user" ? "U" : "SH"}
+                      />
+                      <ChatBubbleMessage variant={variant}>
+                        <p className="text-sm whitespace-pre-wrap">
+                          {parseMessageWithLinks(message.content)}
+                        </p>
+                      </ChatBubbleMessage>
+                    </ChatBubble>
+                  );
+                })}
                 {chatMutation.isPending && (
-                  <div className="flex justify-start">
-                    <div className="bg-[hsl(var(--muted))] text-[hsl(var(--foreground))] rounded-lg px-4 py-2">
-                      <Loader2 className="h-4 w-4 animate-spin" />
-                    </div>
-                  </div>
+                  <ChatBubble variant="received">
+                    <ChatBubbleAvatar 
+                      src={assistantAvatar}
+                      fallback="SH"
+                    />
+                    <ChatBubbleMessage isLoading />
+                  </ChatBubble>
                 )}
               </div>
             </ScrollArea>
