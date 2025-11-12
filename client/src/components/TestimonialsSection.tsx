@@ -1,6 +1,7 @@
 import { Card } from "@/components/ui/card";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Quote } from "lucide-react";
+import { SparklesText } from "@/components/ui/sparkles-text";
 import mariaImage from "@assets/generated_images/Black_mother_testimonial_portrait_f82b76f9.png";
 import davidImage from "@assets/generated_images/Hispanic_father_testimonial_portrait_4ea7d473.png";
 import carmenImage from "@assets/generated_images/Carmen_Lopez_testimonial_portrait_481bd585.png";
@@ -95,10 +96,14 @@ export default function TestimonialsSection({ language }: TestimonialsSectionPro
 
   return (
     <section className="py-16 md:py-24 px-6 bg-muted/30 overflow-hidden">
-      <div className="max-w-6xl mx-auto mb-12">
-        <h2 className="text-4xl md:text-5xl font-bold text-center">
-          {t.title}
-        </h2>
+      <div className="max-w-6xl mx-auto mb-12 flex justify-center">
+        <SparklesText 
+          as="h2"
+          text={t.title} 
+          className="text-4xl md:text-5xl font-bold"
+          colors={{ first: "#2D9B92", second: "#4FC3B8" }}
+          sparklesCount={8}
+        />
       </div>
       
       <div className="relative group">
