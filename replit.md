@@ -8,7 +8,22 @@ The application serves as a modern enrollment portal that integrates with GoHigh
 
 ## Recent Changes
 
-**November 12, 2025 (Sparkles Animation on Testimonials Heading):**
+**November 12, 2025 (Modern Footer with Social Media Integration):**
+- Upgraded Footer component from basic 2-column layout to professional 3-column design inspired by 21st.dev
+- **Column 1**: Company information with Safe Harbor name, Body & Brain™ Program subtitle, and description text
+- **Column 2**: Contact details (phone, email, address) using semantic `<address>` tag for better accessibility
+- **Column 3**: Social media buttons (Facebook, Instagram, Twitter) and hours of operation
+- Implemented functional social media links with circular icon buttons (rounded-full) using Button component with asChild prop
+- Added bilingual tooltip system on hover (e.g., "Follow us on Facebook" / "Síguenos en Facebook")
+- Social links open in new tabs with security attributes (target="_blank", rel="noopener noreferrer")
+- Placeholder URLs provided (facebook.com/safeharborbehavioralhealth, etc.) ready for client's actual social profiles
+- Added subtle decorative blur effect (bg-primary/10 blur-2xl) for premium modern feel
+- Enhanced typography with proper heading hierarchy (h2, h3) and larger text sizes
+- Fully responsive with 3-column (desktop), 2-column (tablet), 1-column (mobile) breakpoints
+- All content maintains 5th grade reading level in both English and Spanish
+- Preserves all original contact information and Safe Harbor teal color scheme
+
+**November 12, 2025 (Earlier - Sparkles Animation on Testimonials Heading):**
 - Created SparklesText component for animated sparkle effects around text
 - Component uses framer-motion for smooth SVG star animations (fade, scale, rotate)
 - Implemented polymorphic "as" prop to support any HTML element (h1, h2, p, div, etc.)
