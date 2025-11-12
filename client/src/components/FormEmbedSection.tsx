@@ -1,5 +1,6 @@
 import { Card } from "@/components/ui/card";
 import { AlertCircle } from "lucide-react";
+import { AnimatedShinyText } from "@/components/ui/animated-shiny-text";
 
 interface FormEmbedSectionProps {
   language: "en" | "es";
@@ -39,7 +40,9 @@ export default function FormEmbedSection({ language }: FormEmbedSectionProps) {
     <section className="py-16 md:py-24 px-6" id="enrollment-form">
       <div className="max-w-3xl mx-auto">
         <h2 className="text-4xl md:text-5xl font-bold text-center mb-4">
-          {t.title}
+          <AnimatedShinyText className="text-4xl md:text-5xl font-bold" shimmerWidth={200}>
+            {t.title}
+          </AnimatedShinyText>
         </h2>
         <p className="text-xl text-muted-foreground text-center mb-12">
           {t.subtitle}
