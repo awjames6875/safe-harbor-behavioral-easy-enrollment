@@ -1,5 +1,5 @@
 import { Card } from "@/components/ui/card";
-import { FileText, ClipboardCheck, Calendar } from "lucide-react";
+import { Play, FileText, Mail } from "lucide-react";
 
 interface StepsSectionProps {
   language: "en" | "es";
@@ -11,21 +11,21 @@ const content = {
     steps: [
       {
         number: 1,
-        title: "Fill Out Form",
-        description: "Fill out our quick form with your child's info. Takes just a few minutes!",
-        icon: FileText,
+        title: "Watch Welcome Video",
+        description: "Watch our short video to learn about the free program!",
+        icon: Play,
       },
       {
         number: 2,
-        title: "Do Online Forms",
-        description: "Watch a short video. Then fill out forms on your computer or phone when you want.",
-        icon: ClipboardCheck,
+        title: "Fill Out Form Below",
+        description: "Complete the form on this page below. It takes just a few minutes!",
+        icon: FileText,
       },
       {
         number: 3,
-        title: "Book First Visit",
-        description: "Pick a time for your child to meet our team. We will help you find a good day!",
-        icon: Calendar,
+        title: "Check Email & Finish",
+        description: "Check your email for next steps to complete your forms and book your visit!",
+        icon: Mail,
       },
     ],
   },
@@ -34,21 +34,21 @@ const content = {
     steps: [
       {
         number: 1,
-        title: "Llenar Formulario",
-        description: "Llene nuestro formulario rápido con la información de su hijo. ¡Solo toma unos minutos!",
-        icon: FileText,
+        title: "Ver Video de Bienvenida",
+        description: "¡Vea nuestro video corto para aprender sobre el programa gratis!",
+        icon: Play,
       },
       {
         number: 2,
-        title: "Hacer Formularios",
-        description: "Vea un video corto. Luego llene los formularios en su computadora o teléfono cuando quiera.",
-        icon: ClipboardCheck,
+        title: "Llenar Formulario Abajo",
+        description: "Complete el formulario en esta página abajo. ¡Solo toma unos minutos!",
+        icon: FileText,
       },
       {
         number: 3,
-        title: "Reservar Primera Visita",
-        description: "Escoja un tiempo para que su hijo vea a nuestro equipo. ¡Le ayudaremos a encontrar un buen día!",
-        icon: Calendar,
+        title: "Revise Email y Termine",
+        description: "¡Revise su correo electrónico para los próximos pasos para completar sus formularios y reservar su visita!",
+        icon: Mail,
       },
     ],
   },
