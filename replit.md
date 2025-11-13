@@ -26,7 +26,7 @@ Preferred communication style: Simple, everyday language at 5th grade reading le
 - **Progressive Disclosure**: Information presented in digestible chunks.
 - **Healthcare-Focused**: Combines healthcare portal clarity with modern SaaS onboarding simplicity.
 - **Inclusive Imagery**: Features diverse brown-skinned children and caregivers.
-- **UI/UX**: Features include animated elements (sparkles, shimmer headings, glowing buttons, aurora-like background gradients, floating geometric shapes), a 3D glassmorphic animated logo with floating effects and teal-colored glass styling, a "live photo" zoom effect on hero background, a responsive modern footer with 7 social media platforms, and an integrated AI chatbot with professional chat bubbles and an enhanced visibility launcher.
+- **UI/UX**: Features include animated elements (sparkles, shimmer headings, glowing buttons, aurora-like background gradients, floating geometric shapes), an Apple-style 3D rotating logo with smooth Y-axis rotation and Safe Harbor teal glow effects, a "live photo" zoom effect on hero background, a responsive modern footer with 7 social media platforms, and an integrated AI chatbot with professional chat bubbles and an enhanced visibility launcher.
 
 **Component Structure:**
 - Modular and reusable components with language prop injection.
