@@ -1,5 +1,4 @@
 import { Card } from "@/components/ui/card";
-import { AlertCircle } from "lucide-react";
 import { AnimatedShinyText } from "@/components/ui/animated-shiny-text";
 
 interface FormEmbedSectionProps {
@@ -10,26 +9,12 @@ const content = {
   en: {
     title: "Sign Up Here",
     subtitle: "Fill out this quick form to get started!",
-    placeholder: "Form Goes Here",
-    instructions: [
-      "For Staff:",
-      "1. Log in to GoHighLevel",
-      "2. Go to Forms and copy the code",
-      "3. Paste the code here",
-      "The form will show up for parents",
-    ],
+    iframeTitle: "Enrollment Form",
   },
   es: {
     title: "Regístrese Aquí",
     subtitle: "¡Llene este formulario rápido para empezar!",
-    placeholder: "El Formulario Va Aquí",
-    instructions: [
-      "Para Personal:",
-      "1. Entre a GoHighLevel",
-      "2. Vaya a Formularios y copie el código",
-      "3. Pegue el código aquí",
-      "El formulario aparecerá para los padres",
-    ],
+    iframeTitle: "Formulario de Inscripción",
   },
 };
 
@@ -48,18 +33,15 @@ export default function FormEmbedSection({ language }: FormEmbedSectionProps) {
           {t.subtitle}
         </p>
         
-        <Card className="p-12 border-2 border-dashed border-primary/30 bg-primary/5 hover-elevate">
-          <div className="text-center">
-            <AlertCircle className="w-16 h-16 text-primary mx-auto mb-6" />
-            <h3 className="text-2xl font-semibold mb-4">{t.placeholder}</h3>
-            <div className="text-left max-w-md mx-auto space-y-2 text-base text-muted-foreground">
-              {t.instructions.map((instruction, index) => (
-                <p key={index} className={index === 0 ? "font-semibold text-foreground mt-6 text-lg" : ""}>
-                  {instruction}
-                </p>
-              ))}
-            </div>
-          </div>
+        <Card className="p-6 md:p-8 overflow-hidden">
+          <iframe 
+            src="https://app.gohighlevel.com/v2/preview/NfHdX8rbPBTqxCESkSjm" 
+            width="100%" 
+            height="1000px" 
+            style={{ border: 'none' }}
+            title={t.iframeTitle}
+            data-testid="iframe-enrollment-form"
+          />
         </Card>
       </div>
     </section>
