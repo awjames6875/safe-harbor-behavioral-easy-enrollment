@@ -10,20 +10,13 @@ export default function Header({ language, onLanguageChange }: HeaderProps) {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-sm border-b border-border">
       <div className="max-w-7xl mx-auto px-6 py-4 relative">
-        <div className="flex items-center justify-center" style={{ perspective: "1000px" }}>
-          <div 
-            className="glass-logo-container group"
-            data-testid="container-logo-glass"
-          >
-            <div className="glass-logo-inner">
-              <img 
-                src={logoImage} 
-                alt="Safe Harbor Behavioral Health" 
-                className="h-20 w-auto relative z-10"
-                data-testid="img-logo"
-              />
-            </div>
-          </div>
+        <div className="flex items-center justify-center logo-3d-container">
+          <img 
+            src={logoImage} 
+            alt="Safe Harbor Behavioral Health" 
+            className="h-20 w-auto logo-3d-rotate"
+            data-testid="img-logo"
+          />
         </div>
         
         <div className="absolute right-6 top-1/2 transform -translate-y-1/2">
