@@ -1,4 +1,5 @@
-import { Phone, Mail, MapPin, Facebook, Instagram, Twitter } from "lucide-react";
+import { Phone, Mail, MapPin, Facebook, Instagram, Twitter, Star } from "lucide-react";
+import { SiYoutube, SiTiktok, SiPinterest } from "react-icons/si";
 import { Button } from "@/components/ui/button";
 import {
   Tooltip,
@@ -25,7 +26,11 @@ const content = {
     socialTooltips: {
       facebook: "Follow us on Facebook",
       instagram: "Follow us on Instagram",
-      twitter: "Follow us on Twitter",
+      twitter: "Follow us on X",
+      youtube: "Subscribe on YouTube",
+      tiktok: "Follow us on TikTok",
+      pinterest: "Follow us on Pinterest",
+      googleReviews: "Leave us a Google Review",
     },
     copyright: "© 2025 Safe Harbor Behavioral Health. All rights reserved.",
   },
@@ -42,7 +47,11 @@ const content = {
     socialTooltips: {
       facebook: "Síguenos en Facebook",
       instagram: "Síguenos en Instagram",
-      twitter: "Síguenos en Twitter",
+      twitter: "Síguenos en X",
+      youtube: "Suscríbete en YouTube",
+      tiktok: "Síguenos en TikTok",
+      pinterest: "Síguenos en Pinterest",
+      googleReviews: "Déjanos una reseña en Google",
     },
     copyright: "© 2025 Safe Harbor Behavioral Health. Todos los derechos reservados.",
   },
@@ -97,8 +106,7 @@ export default function Footer({ language }: FooterProps) {
           {/* Connect Section */}
           <div className="relative">
             <h3 className="mb-4 text-xl font-semibold">{t.connect}</h3>
-            <div className="mb-6 flex space-x-4">
-              {/* NOTE: Update these href values with your actual social media URLs */}
+            <div className="mb-6 flex flex-wrap gap-3">
               <TooltipProvider>
                 <Tooltip>
                   <TooltipTrigger asChild>
@@ -109,7 +117,7 @@ export default function Footer({ language }: FooterProps) {
                       asChild
                     >
                       <a 
-                        href="https://facebook.com/safeharborbehavioralhealth" 
+                        href="https://www.facebook.com/profile.php?id=61577803150292" 
                         target="_blank" 
                         rel="noopener noreferrer"
                         data-testid="link-facebook"
@@ -124,6 +132,7 @@ export default function Footer({ language }: FooterProps) {
                   </TooltipContent>
                 </Tooltip>
               </TooltipProvider>
+
               <TooltipProvider>
                 <Tooltip>
                   <TooltipTrigger asChild>
@@ -134,7 +143,7 @@ export default function Footer({ language }: FooterProps) {
                       asChild
                     >
                       <a 
-                        href="https://instagram.com/safeharborbehavioralhealth" 
+                        href="https://www.instagram.com/safeharborbh/" 
                         target="_blank" 
                         rel="noopener noreferrer"
                         data-testid="link-instagram"
@@ -149,6 +158,7 @@ export default function Footer({ language }: FooterProps) {
                   </TooltipContent>
                 </Tooltip>
               </TooltipProvider>
+
               <TooltipProvider>
                 <Tooltip>
                   <TooltipTrigger asChild>
@@ -159,18 +169,122 @@ export default function Footer({ language }: FooterProps) {
                       asChild
                     >
                       <a 
-                        href="https://twitter.com/safeharborbh" 
+                        href="https://x.com/SafeHarborBH" 
                         target="_blank" 
                         rel="noopener noreferrer"
                         data-testid="link-twitter"
                       >
                         <Twitter className="h-4 w-4" />
-                        <span className="sr-only">Twitter</span>
+                        <span className="sr-only">X (Twitter)</span>
                       </a>
                     </Button>
                   </TooltipTrigger>
                   <TooltipContent>
                     <p>{t.socialTooltips.twitter}</p>
+                  </TooltipContent>
+                </Tooltip>
+              </TooltipProvider>
+
+              <TooltipProvider>
+                <Tooltip>
+                  <TooltipTrigger asChild>
+                    <Button 
+                      variant="outline" 
+                      size="icon" 
+                      className="rounded-full"
+                      asChild
+                    >
+                      <a 
+                        href="https://www.youtube.com/channel/UCCIaW9elV5Z3maAkhrbEzyw" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        data-testid="link-youtube"
+                      >
+                        <SiYoutube className="h-4 w-4" />
+                        <span className="sr-only">YouTube</span>
+                      </a>
+                    </Button>
+                  </TooltipTrigger>
+                  <TooltipContent>
+                    <p>{t.socialTooltips.youtube}</p>
+                  </TooltipContent>
+                </Tooltip>
+              </TooltipProvider>
+
+              <TooltipProvider>
+                <Tooltip>
+                  <TooltipTrigger asChild>
+                    <Button 
+                      variant="outline" 
+                      size="icon" 
+                      className="rounded-full"
+                      asChild
+                    >
+                      <a 
+                        href="https://www.tiktok.com/@user2356560294705?lang=en" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        data-testid="link-tiktok"
+                      >
+                        <SiTiktok className="h-4 w-4" />
+                        <span className="sr-only">TikTok</span>
+                      </a>
+                    </Button>
+                  </TooltipTrigger>
+                  <TooltipContent>
+                    <p>{t.socialTooltips.tiktok}</p>
+                  </TooltipContent>
+                </Tooltip>
+              </TooltipProvider>
+
+              <TooltipProvider>
+                <Tooltip>
+                  <TooltipTrigger asChild>
+                    <Button 
+                      variant="outline" 
+                      size="icon" 
+                      className="rounded-full"
+                      asChild
+                    >
+                      <a 
+                        href="https://www.pinterest.com/SafeHarborBehaviouralHealth" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        data-testid="link-pinterest"
+                      >
+                        <SiPinterest className="h-4 w-4" />
+                        <span className="sr-only">Pinterest</span>
+                      </a>
+                    </Button>
+                  </TooltipTrigger>
+                  <TooltipContent>
+                    <p>{t.socialTooltips.pinterest}</p>
+                  </TooltipContent>
+                </Tooltip>
+              </TooltipProvider>
+
+              <TooltipProvider>
+                <Tooltip>
+                  <TooltipTrigger asChild>
+                    <Button 
+                      variant="outline" 
+                      size="icon" 
+                      className="rounded-full"
+                      asChild
+                    >
+                      <a 
+                        href="https://g.page/r/CWld6M_N9veQEAI/review" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        data-testid="link-google-reviews"
+                      >
+                        <Star className="h-4 w-4" />
+                        <span className="sr-only">Google Reviews</span>
+                      </a>
+                    </Button>
+                  </TooltipTrigger>
+                  <TooltipContent>
+                    <p>{t.socialTooltips.googleReviews}</p>
                   </TooltipContent>
                 </Tooltip>
               </TooltipProvider>
