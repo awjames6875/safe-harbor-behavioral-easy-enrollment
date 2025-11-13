@@ -21,12 +21,12 @@ Preferred communication style: Simple, everyday language at 5th grade reading le
 - **Build Tool**: Vite
 
 **Design Principles:**
-- **Accessibility-First**: Large touch targets, high contrast, clear visual hierarchy, larger font sizes, and increased button sizes.
+- **Accessibility-First**: Large touch targets, high contrast, clear visual hierarchy, larger font sizes, and increased button sizes. All animations respect prefers-reduced-motion user preferences.
 - **Bilingual Parity**: Equal visual weight for English and Spanish content with a language toggle; all content at a 5th-grade reading level.
 - **Progressive Disclosure**: Information presented in digestible chunks.
 - **Healthcare-Focused**: Combines healthcare portal clarity with modern SaaS onboarding simplicity.
 - **Inclusive Imagery**: Features diverse brown-skinned children and caregivers.
-- **UI/UX**: Features include animated elements (sparkles, shimmer headings, glowing buttons, aurora-like background gradients, floating geometric shapes), a "live photo" zoom effect on hero background, a responsive modern footer, and an integrated AI chatbot with professional chat bubbles and an enhanced visibility launcher.
+- **UI/UX**: Features include animated elements (sparkles, shimmer headings, glowing buttons, aurora-like background gradients, floating geometric shapes), a 3D glassmorphic animated logo with floating effects and teal-colored glass styling, a "live photo" zoom effect on hero background, a responsive modern footer with 7 social media platforms, and an integrated AI chatbot with professional chat bubbles and an enhanced visibility launcher.
 
 **Component Structure:**
 - Modular and reusable components with language prop injection.
