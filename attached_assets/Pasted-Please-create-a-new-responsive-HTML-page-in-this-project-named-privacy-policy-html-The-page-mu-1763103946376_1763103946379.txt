@@ -1,0 +1,135 @@
+Please create a new responsive HTML page in this project named `privacy-policy.html`.
+
+The page must:
+- Use the same colors, fonts, spacing, and branding as `terms-of-service.html`.
+- Include a header with "Privacy Policy" and a "Back to Enrollment" link pointing to `/`.
+- Use semantic HTML, clean mobile-friendly layout, and easy-to-read typography.
+- Add this exact Privacy Policy content below.
+- Format all headings clearly and match the design of the Terms of Service page.
+- Add this page to the footer navigation: "Privacy Policy" linking to `/privacy-policy.html`.
+- Ensure the styling matches the rest of the site.
+
+=================== START PRIVACY POLICY TEXT ===================
+
+Privacy Policy  
+Last updated: November 14, 2025
+
+1. Introduction  
+Safe Harbor Behavioral Health (“Safe Harbor,” “we,” “us,” or “our”) operates Safe Harbor Easy Enrollment (the “Site”). This Privacy Policy explains how we collect, use, disclose, and protect the information you provide when using this Site as part of the Body & Brain™ Daycare Program enrollment process.
+
+By accessing or using the Site, you agree to the practices described in this Privacy Policy. If you do not agree, please do not use the Site.
+
+2. Information We Collect  
+We may collect the following categories of information:
+
+**2.1 Information You Provide Directly**  
+This includes information you voluntarily submit through forms, including:  
+- Parent/guardian contact information (name, phone, email, address)  
+- Child information (name, age, date of birth, daycare site, guardian relationship)  
+- Insurance information (including SoonerCare/Medicaid details)  
+- Scheduling preferences  
+- Any additional notes or information you choose to provide  
+
+**2.2 Automatically Collected Information**  
+When you access the Site, we may automatically collect certain technical data, including:  
+- IP address  
+- Browser type  
+- Device type  
+- Pages visited  
+- Date and time of access  
+- Basic analytics information  
+
+This information helps us improve the Site, troubleshoot issues, and understand usage patterns. We do not use this information to identify individual users.
+
+3. How We Use Your Information  
+We use the information collected to:  
+- Process child enrollment for the Body & Brain™ Daycare Program  
+- Verify insurance eligibility (including SoonerCare)  
+- Contact you about enrollment steps, scheduling, paperwork, and service details  
+- Maintain required program and compliance records  
+- Improve the Site and our services  
+- Communicate updates, reminders, or important program information  
+- Respond to questions or support requests  
+- Meet regulatory, billing, and reporting obligations  
+
+4. How We Protect Your Information  
+We use reasonable administrative, technical, and physical safeguards designed to protect the data submitted through this Site. However, no online system can be guaranteed 100% secure.  
+By using the Site, you acknowledge these limitations and assume responsibility for protecting your own devices and login information (if applicable).
+
+5. Sharing of Information  
+Safe Harbor does **not sell** or rent your personal information.
+
+We may share information under the following circumstances:
+
+**5.1 With Your Consent**  
+For example, when coordinating with partner daycare centers or therapy providers.
+
+**5.2 With Service Providers**  
+We may use third-party platforms to securely receive forms, process data, or send communications. These vendors are required to protect the privacy of your information.
+
+**5.3 For Legal and Compliance Purposes**  
+We may disclose information if required by law, regulation, court order, or to comply with SoonerCare/Medicaid, ODMHSAS, or other state/federal requirements.
+
+**5.4 Program Operations**  
+Information may be shared among Safe Harbor staff and contractors directly involved in enrollment, intake, service delivery, or case management.
+
+6. Cookies and Tracking Technologies  
+The Site may use basic analytics, session data, or optional cookies to improve user experience. Cookies help with:  
+- Saving form progress  
+- Improving page load performance  
+- Understanding how users navigate the Site  
+
+You can disable cookies in your browser, but certain features of the Site may not work as intended.
+
+7. Children’s Privacy  
+The Site collects information about children **only** for the purpose of enrollment into services.  
+All information must be submitted by a parent, legal guardian, or legally authorized caregiver.  
+We do not knowingly collect information directly from children.
+
+8. Communications & Text Messages  
+By providing your phone number and email address, you consent to receive communications regarding:  
+- Enrollment  
+- Scheduling  
+- Required documents  
+- Program participation  
+- Service updates  
+Message/data rates may apply.  
+You may opt out of non-essential communication at any time, but essential enrollment or scheduling messages may still be required.
+
+9. Data Retention  
+We retain information for as long as necessary to:  
+- Complete enrollment  
+- Provide program services  
+- Meet Medicaid/SoonerCare, ODMHSAS, or other regulatory requirements  
+- Maintain accurate records under applicable law  
+
+10. Third-Party Links  
+The Site may link to third-party tools or platforms (e.g., form processors, scheduling tools, intake forms).  
+Safe Harbor is not responsible for the privacy, security, or content of these external sites.  
+You are encouraged to review the privacy policies of any third-party site you interact with.
+
+11. HIPAA & Other Privacy Rights  
+Safe Harbor may provide a **Notice of Privacy Practices (NPP)** describing how protected health information (PHI) is used and disclosed under HIPAA.  
+Where HIPAA or another legally required privacy notice applies, that notice controls.
+
+This Site is mainly an enrollment tool and not an EMR system. Information submitted here may become part of your child’s clinical record once services begin.
+
+12. Your Rights  
+Depending on applicable federal or state law, you may have rights to:  
+- Access or request copies of certain information  
+- Request corrections  
+- Request restrictions on certain uses  
+- Withdraw consent (where applicable)  
+- Ask questions or file privacy-related concerns  
+
+To exercise these rights, use the contact information on the Site.
+
+13. Changes to This Privacy Policy  
+We may update this Privacy Policy periodically.  
+When changes are made, the “Last updated” date at the top of this page will be revised.  
+Your continued use of the Site after changes indicates acceptance of the updated policy.
+
+14. Contact Information  
+If you have questions about this Privacy Policy, data practices, or enrollment, please contact us using the contact information available on the Site’s enrollment or contact page.
+
+=================== END PRIVACY POLICY TEXT ===================
