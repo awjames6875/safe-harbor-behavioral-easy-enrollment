@@ -34,6 +34,7 @@ const content = {
       googleReviews: "Leave us a Google Review",
     },
     termsOfService: "Terms of Service",
+    privacyPolicy: "Privacy Policy",
     copyright: "© 2025 Safe Harbor Behavioral Health. All rights reserved.",
   },
   es: {
@@ -56,6 +57,7 @@ const content = {
       googleReviews: "Déjanos una reseña en Google",
     },
     termsOfService: "Términos de Servicio",
+    privacyPolicy: "Política de Privacidad",
     copyright: "© 2025 Safe Harbor Behavioral Health. Todos los derechos reservados.",
   },
 };
@@ -302,13 +304,23 @@ export default function Footer({ language }: FooterProps) {
         </div>
         
         <div className="mt-12 flex flex-col items-center justify-center gap-4 border-t pt-8 text-center">
-          <Link 
-            href="/terms" 
-            className="text-base text-muted-foreground hover:text-foreground transition-colors underline"
-            data-testid="link-terms"
-          >
-            {t.termsOfService}
-          </Link>
+          <div className="flex flex-wrap items-center justify-center gap-4">
+            <Link 
+              href="/terms" 
+              className="text-base text-muted-foreground hover:text-foreground transition-colors underline"
+              data-testid="link-terms"
+            >
+              {t.termsOfService}
+            </Link>
+            <span className="text-muted-foreground" data-testid="separator-legal-links">•</span>
+            <Link 
+              href="/privacy" 
+              className="text-base text-muted-foreground hover:text-foreground transition-colors underline"
+              data-testid="link-privacy"
+            >
+              {t.privacyPolicy}
+            </Link>
+          </div>
           <p className="text-base text-muted-foreground">
             {t.copyright}
           </p>
