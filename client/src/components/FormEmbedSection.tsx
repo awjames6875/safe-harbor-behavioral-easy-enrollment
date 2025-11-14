@@ -11,13 +11,13 @@ const content = {
   en: {
     title: "Sign Up Here",
     subtitle: "Fill out this quick form to get started!",
-    iframeTitle: "Enrollment Form",
+    iframeTitle: "Enrollment Survey",
     loading: "Loading enrollment form...",
   },
   es: {
     title: "Regístrese Aquí",
     subtitle: "¡Llene este formulario rápido para empezar!",
-    iframeTitle: "Formulario de Inscripción",
+    iframeTitle: "Encuesta de Inscripción",
     loading: "Cargando formulario de inscripción...",
   },
 };
@@ -27,6 +27,19 @@ export default function FormEmbedSection({ language }: FormEmbedSectionProps) {
   const [isLoading, setIsLoading] = useState(true);
   const [showOverlay, setShowOverlay] = useState(true);
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
+
+  // Load GoHighLevel form embed script
+  useEffect(() => {
+    const script = document.createElement('script');
+    script.src = 'https://link.msgsndr.com/js/form_embed.js';
+    script.async = true;
+    document.body.appendChild(script);
+
+    return () => {
+      // Cleanup script on unmount
+      document.body.removeChild(script);
+    };
+  }, []);
 
   // Cleanup timeout on unmount
   useEffect(() => {
@@ -59,7 +72,7 @@ export default function FormEmbedSection({ language }: FormEmbedSectionProps) {
           {t.subtitle}
         </p>
         
-        <Card className="p-6 md:p-8 overflow-hidden relative">
+        <Card className="p-6 md:p-8 overflow-hidden relative min-h-[600px]">
           {/* Loading Overlay */}
           {showOverlay && (
             <div 
@@ -78,12 +91,13 @@ export default function FormEmbedSection({ language }: FormEmbedSectionProps) {
             </div>
           )}
           
-          {/* Enrollment Form Iframe */}
+          {/* GoHighLevel Enrollment Survey Iframe */}
           <iframe 
-            src="https://app.gohighlevel.com/v2/preview/NfHdX8rbPBTqxCESkSjm" 
+            src="https://api.leadconnectorhq.com/widget/survey/ilYKNge7tHozcy1PNsdI" 
             width="100%" 
-            height="1000px" 
-            style={{ border: 'none' }}
+            style={{ border: 'none', overflow: 'hidden' }}
+            {...{ scrolling: 'no' }}
+            id="ilYKNge7tHozcy1PNsdI"
             title={t.iframeTitle}
             data-testid="iframe-enrollment-form"
             onLoad={handleIframeLoad}
