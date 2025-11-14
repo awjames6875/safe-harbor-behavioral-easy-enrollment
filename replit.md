@@ -73,7 +73,7 @@ Preferred communication style: Simple, everyday language at 5th grade reading le
 
 ## External Dependencies
 
-- **GoHighLevel (GHL)**: For CRM, form submissions, contact management, automated workflows, SMS/email campaigns, and appointment scheduling. The enrollment form is embedded directly on the homepage via iframe (URL: https://app.gohighlevel.com/v2/preview/NfHdX8rbPBTqxCESkSjm).
+- **GoHighLevel (GHL)**: For CRM, form submissions, contact management, automated workflows, SMS/email campaigns, and appointment scheduling. The enrollment survey is embedded directly on the homepage via iframe (URL: https://api.leadconnectorhq.com/widget/survey/ilYKNge7tHozcy1PNsdI) with auto-resize script (https://link.msgsndr.com/js/form_embed.js).
 - **Anthropic SDK (Claude AI)**: Integrated for the AI chatbot functionality (Claude Sonnet 4.5).
 - **Goqr.me API**: For generating attendance QR codes.
 - **YouTube/Loom**: For video hosting.
