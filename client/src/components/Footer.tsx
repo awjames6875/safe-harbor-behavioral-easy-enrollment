@@ -1,6 +1,7 @@
 import { Phone, Mail, MapPin, Facebook, Instagram, Twitter, Star } from "lucide-react";
 import { SiYoutube, SiTiktok, SiPinterest } from "react-icons/si";
 import { Button } from "@/components/ui/button";
+import { Link } from "wouter";
 import {
   Tooltip,
   TooltipContent,
@@ -32,6 +33,7 @@ const content = {
       pinterest: "Follow us on Pinterest",
       googleReviews: "Leave us a Google Review",
     },
+    termsOfService: "Terms of Service",
     copyright: "© 2025 Safe Harbor Behavioral Health. All rights reserved.",
   },
   es: {
@@ -53,6 +55,7 @@ const content = {
       pinterest: "Síguenos en Pinterest",
       googleReviews: "Déjanos una reseña en Google",
     },
+    termsOfService: "Términos de Servicio",
     copyright: "© 2025 Safe Harbor Behavioral Health. Todos los derechos reservados.",
   },
 };
@@ -299,6 +302,13 @@ export default function Footer({ language }: FooterProps) {
         </div>
         
         <div className="mt-12 flex flex-col items-center justify-center gap-4 border-t pt-8 text-center">
+          <Link 
+            href="/terms" 
+            className="text-base text-muted-foreground hover:text-foreground transition-colors underline"
+            data-testid="link-terms"
+          >
+            {t.termsOfService}
+          </Link>
           <p className="text-base text-muted-foreground">
             {t.copyright}
           </p>
