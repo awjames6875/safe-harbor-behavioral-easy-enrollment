@@ -1,6 +1,5 @@
 import { useState, useEffect, useRef } from "react";
 import { Card } from "@/components/ui/card";
-import { AnimatedShinyText } from "@/components/ui/animated-shiny-text";
 import { Loader2, Sparkles } from "lucide-react";
 
 interface FormEmbedSectionProps {
@@ -64,9 +63,7 @@ export default function FormEmbedSection({ language }: FormEmbedSectionProps) {
     <section className="py-16 md:py-24 px-6" id="enrollment-form">
       <div className="max-w-3xl mx-auto">
         <h2 className="text-4xl md:text-5xl font-bold text-center mb-4">
-          <AnimatedShinyText className="text-4xl md:text-5xl font-bold" shimmerWidth={200}>
-            {t.title}
-          </AnimatedShinyText>
+          {t.title}
         </h2>
         <p className="text-xl text-muted-foreground text-center mb-12">
           {t.subtitle}
@@ -91,13 +88,22 @@ export default function FormEmbedSection({ language }: FormEmbedSectionProps) {
             </div>
           )}
           
-          {/* GoHighLevel Enrollment Survey Iframe */}
-          <iframe 
-            src="https://api.leadconnectorhq.com/widget/survey/ilYKNge7tHozcy1PNsdI" 
-            width="100%" 
-            style={{ border: 'none', overflow: 'hidden' }}
-            {...{ scrolling: 'no' }}
-            id="ilYKNge7tHozcy1PNsdI"
+          {/* GoHighLevel Parent Intake Form Iframe */}
+          <iframe
+            src="https://api.leadconnectorhq.com/widget/form/QiHZ9AqGPrLJR596VHON"
+            style={{ width: '100%', height: '660px', border: 'none', borderRadius: '3px' }}
+            id="inline-QiHZ9AqGPrLJR596VHON"
+            data-layout="{'id':'INLINE'}"
+            data-trigger-type="alwaysShow"
+            data-trigger-value=""
+            data-activation-type="alwaysActivated"
+            data-activation-value=""
+            data-deactivation-type="neverDeactivate"
+            data-deactivation-value=""
+            data-form-name="SH-Parent Intake"
+            data-height="660"
+            data-layout-iframe-id="inline-QiHZ9AqGPrLJR596VHON"
+            data-form-id="QiHZ9AqGPrLJR596VHON"
             title={t.iframeTitle}
             data-testid="iframe-enrollment-form"
             onLoad={handleIframeLoad}
