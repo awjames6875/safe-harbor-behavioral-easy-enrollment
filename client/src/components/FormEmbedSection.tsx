@@ -1,6 +1,5 @@
-import { useState, useEffect, useRef } from "react";
+import { useEffect } from "react";
 import { Card } from "@/components/ui/card";
-import { Loader2, Sparkles } from "lucide-react";
 
 interface FormEmbedSectionProps {
   language: "en" | "es";
@@ -9,23 +8,30 @@ interface FormEmbedSectionProps {
 const content = {
   en: {
     title: "Sign Up Here",
-    subtitle: "Fill out this quick form to get started!",
-    iframeTitle: "Enrollment Survey",
-    loading: "Loading enrollment form...",
+    subtitle: "Please complete BOTH forms below to finish your enrollment!",
+    step1Title: "Step 1: Enrollment Survey",
+    step1Description: "Tell us about your child and your daycare.",
+    step2Title: "Step 2: Parent Intake Form",
+    step2Description: "Complete your family information.",
+    iframeTitle1: "Enrollment Survey",
+    iframeTitle2: "Parent Intake Form",
+    loading: "Loading forms...",
   },
   es: {
     title: "Regístrese Aquí",
-    subtitle: "¡Llene este formulario rápido para empezar!",
-    iframeTitle: "Encuesta de Inscripción",
-    loading: "Cargando formulario de inscripción...",
+    subtitle: "¡Por favor complete AMBOS formularios abajo para terminar su inscripción!",
+    step1Title: "Paso 1: Encuesta de Inscripción",
+    step1Description: "Cuéntenos sobre su hijo y su guardería.",
+    step2Title: "Paso 2: Formulario de Admisión de Padres",
+    step2Description: "Complete la información de su familia.",
+    iframeTitle1: "Encuesta de Inscripción",
+    iframeTitle2: "Formulario de Admisión de Padres",
+    loading: "Cargando formularios...",
   },
 };
 
 export default function FormEmbedSection({ language }: FormEmbedSectionProps) {
   const t = content[language];
-  const [isLoading, setIsLoading] = useState(true);
-  const [showOverlay, setShowOverlay] = useState(true);
-  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   // Load GoHighLevel form embed script
   useEffect(() => {
@@ -36,79 +42,74 @@ export default function FormEmbedSection({ language }: FormEmbedSectionProps) {
 
     return () => {
       // Cleanup script on unmount
-      document.body.removeChild(script);
-    };
-  }, []);
-
-  // Cleanup timeout on unmount
-  useEffect(() => {
-    return () => {
-      if (timeoutRef.current) {
-        clearTimeout(timeoutRef.current);
+      if (document.body.contains(script)) {
+        document.body.removeChild(script);
       }
     };
   }, []);
 
-  const handleIframeLoad = () => {
-    // Start fade-out transition
-    setIsLoading(false);
-    
-    // Remove overlay after transition completes (500ms)
-    timeoutRef.current = setTimeout(() => {
-      setShowOverlay(false);
-    }, 500);
-  };
-
   return (
     <section className="py-16 md:py-24 px-6" id="enrollment-form">
       <div className="max-w-3xl mx-auto">
-        <h2 className="text-4xl md:text-5xl font-bold text-center mb-4">
+        <h2 className="text-4xl md:text-5xl font-bold text-center mb-4" data-testid="heading-enrollment">
           {t.title}
         </h2>
-        <p className="text-xl text-muted-foreground text-center mb-12">
+        <p className="text-xl font-semibold text-center mb-12 text-primary" data-testid="text-both-forms-instruction">
           {t.subtitle}
         </p>
         
-        <Card className="p-6 md:p-8 overflow-hidden relative min-h-[600px]">
-          {/* Loading Overlay */}
-          {showOverlay && (
-            <div 
-              className={`absolute inset-0 bg-background/95 backdrop-blur-sm z-10 flex flex-col items-center justify-center transition-opacity duration-500 ${
-                isLoading ? 'opacity-100' : 'opacity-0'
-              }`}
-              data-testid="loading-overlay"
-            >
-              <div className="relative">
-                <Sparkles className="w-16 h-16 text-primary animate-pulse" />
-                <Loader2 className="w-8 h-8 text-primary/60 animate-spin absolute top-4 left-4" />
-              </div>
-              <p className="mt-6 text-lg font-medium text-foreground animate-pulse">
-                {t.loading}
-              </p>
-            </div>
-          )}
+        {/* Step 1: Enrollment Survey */}
+        <div className="mb-12">
+          <h3 className="text-2xl md:text-3xl font-bold mb-2" data-testid="heading-step-1">
+            {t.step1Title}
+          </h3>
+          <p className="text-lg text-muted-foreground mb-6" data-testid="text-step-1-description">
+            {t.step1Description}
+          </p>
           
-          {/* GoHighLevel Parent Intake Form Iframe */}
-          <iframe
-            src="https://api.leadconnectorhq.com/widget/form/QiHZ9AqGPrLJR596VHON"
-            style={{ width: '100%', height: '660px', border: 'none', borderRadius: '3px' }}
-            id="inline-QiHZ9AqGPrLJR596VHON"
-            data-layout="{'id':'INLINE'}"
-            data-trigger-type="alwaysShow"
-            data-trigger-value=""
-            data-activation-type="alwaysActivated"
-            data-activation-value=""
-            data-deactivation-type="neverDeactivate"
-            data-deactivation-value=""
-            data-form-name="SH-Parent Intake"
-            data-height="660"
-            data-layout-iframe-id="inline-QiHZ9AqGPrLJR596VHON"
-            data-form-id="QiHZ9AqGPrLJR596VHON"
-            title={t.iframeTitle}
-            data-testid="iframe-enrollment-form"
-            onLoad={handleIframeLoad}
-          />
-        </Card>
+          <Card className="p-6 md:p-8 overflow-hidden">
+            <iframe 
+              src="https://api.leadconnectorhq.com/widget/survey/ilYKNge7tHozcy1PNsdI" 
+              width="100%" 
+              style={{ border: 'none', overflow: 'hidden' }}
+              {...{ scrolling: 'no' }}
+              id="ilYKNge7tHozcy1PNsdI"
+              title={t.iframeTitle1}
+              data-testid="iframe-enrollment-survey"
+            />
+          </Card>
+        </div>
+
+        {/* Step 2: Parent Intake Form */}
+        <div>
+          <h3 className="text-2xl md:text-3xl font-bold mb-2" data-testid="heading-step-2">
+            {t.step2Title}
+          </h3>
+          <p className="text-lg text-muted-foreground mb-6" data-testid="text-step-2-description">
+            {t.step2Description}
+          </p>
+          
+          <Card className="p-6 md:p-8 overflow-hidden">
+            <iframe
+              src="https://api.leadconnectorhq.com/widget/form/QiHZ9AqGPrLJR596VHON"
+              style={{ width: '100%', height: '660px', border: 'none', borderRadius: '3px' }}
+              id="inline-QiHZ9AqGPrLJR596VHON"
+              data-layout="{'id':'INLINE'}"
+              data-trigger-type="alwaysShow"
+              data-trigger-value=""
+              data-activation-type="alwaysActivated"
+              data-activation-value=""
+              data-deactivation-type="neverDeactivate"
+              data-deactivation-value=""
+              data-form-name="SH-Parent Intake"
+              data-height="660"
+              data-layout-iframe-id="inline-QiHZ9AqGPrLJR596VHON"
+              data-form-id="QiHZ9AqGPrLJR596VHON"
+              title={t.iframeTitle2}
+              data-testid="iframe-parent-intake"
+            />
+          </Card>
+        </div>
       </div>
     </section>
   );
